@@ -1,0 +1,424 @@
+:root {
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+    "Source Han Sans CN", sans-serif;
+}
+
+.main-container {
+  overflow: hidden;
+}
+
+.main-container,
+.main-container * {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  outline: 0;
+}
+
+.main-container {
+  position: relative;
+  width: 1427px;
+  height: 1198px;
+  margin: 0 auto;
+  background: #f5f4ef;
+  border: 1px solid #000000;
+  overflow: hidden;
+}
+.rectangle {
+  position: relative;
+  width: 1427px;
+  height: 172px;
+  margin: 0 0 0 0;
+  background: #e4d7f5;
+}
+.happy-hounds {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 77px;
+  top: 46px;
+  left: 154px;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 76.8px;
+  text-align: left;
+  white-space: nowrap;
+  z-index: 1;
+}
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  gap: 10px;
+  position: absolute;
+  width: 609px;
+  height: 36px;
+  top: 85px;
+  left: 682px;
+  z-index: 19;
+}
+.frame-1 {
+  flex-shrink: 0;
+  position: relative;
+  width: 609px;
+  height: 36px;
+  z-index: 20;
+}
+.appointment {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 30px;
+  top: 0;
+  left: 107px;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 21;
+}
+.history {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 30px;
+  top: 0;
+  left: 324px;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 22;
+}
+.chat {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 30px;
+  top: 0;
+  left: -6px;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 23;
+}
+.rectangle-2 {
+  position: absolute;
+  width: 116px;
+  height: 30px;
+  top: 0;
+  left: 476px;
+  cursor: pointer;
+  background: #7d3f98;
+  border: none;
+  z-index: 24;
+}
+.logout {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 16px;
+  top: 0;
+  left: 483px;
+  color: #ffffff;
+  font-family: Itim, var(--default-font-family);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 25;
+}
+.rectangle-3 {
+  position: relative;
+  width: 1120px;
+  height: 380px;
+  margin: 41px 0 0 154px;
+  background: #f7f7f7;
+  border: 1px solid #000000;
+  z-index: 5;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.flex-column-d {
+  position: absolute;
+  width: 752px;
+  height: 327px;
+  top: 22px;
+  left: 322px;
+  font-size: 0px;
+  z-index: 12;
+}
+.welcome-hassan {
+  display: block;
+  position: relative;
+  height: 60px;
+  margin: 0 0 0 0;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 10;
+}
+.rectangle-4 {
+  position: relative;
+  width: 752px;
+  height: 248px;
+  margin: 19px 0 0 0;
+  font-size: 0px;
+  background: #f7f7f7;
+  z-index: 12;
+  overflow: visible auto;
+  border-radius: 10px;
+}
+.today {
+  display: block;
+  position: relative;
+  height: 36px;
+  margin: 13px 0 0 15px;
+  color: #5a5a5a;
+  font-family: Itim, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 13;
+}
+.march {
+  display: block;
+  position: relative;
+  height: 36px;
+  margin: 75px 0 0 15px;
+  color: #5a5a5a;
+  font-family: Itim, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 18;
+}
+.ellipse {
+  position: absolute;
+  width: 66px;
+  height: 69px;
+  top: 50px;
+  left: 15px;
+  background: url(./assets/images/8f1acf74-ca93-4006-bdc4-7c9b7b3ad146.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 14;
+}
+.liam-time {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 36px;
+  top: 67px;
+  left: 101px;
+  color: #5a5a5a;
+  font-family: Itim, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-transform: capitalize;
+  white-space: nowrap;
+  z-index: 16;
+}
+.ellipse-5 {
+  position: absolute;
+  width: 66px;
+  height: 69px;
+  top: 165px;
+  left: 15px;
+  background: url(./assets/images/ce14b6b3-0b26-4b75-9609-779bd2afe3ec.png)
+    no-repeat center;
+  background-size: cover;
+  z-index: 15;
+}
+.emily-time {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 36px;
+  top: 182px;
+  left: 101px;
+  color: #5a5a5a;
+  font-family: Itim, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-transform: capitalize;
+  white-space: nowrap;
+  z-index: 17;
+}
+.upcoming-appointments {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 291px;
+  height: 96px;
+  top: 151px;
+  left: 9px;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: left;
+  text-overflow: initial;
+  text-transform: uppercase;
+  z-index: 11;
+  overflow: hidden;
+}
+.rectangle-6 {
+  position: relative;
+  width: 1120px;
+  height: 380px;
+  margin: 41px 0 0 154px;
+  background: #f7f7f7;
+  border: 1px solid #000000;
+  z-index: 4;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
+.specific-route {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  width: 912px;
+  height: 315px;
+  top: 31px;
+  left: 189px;
+  color: #5a5a5a;
+  font-family: Itim, var(--default-font-family);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: left;
+  text-overflow: initial;
+  text-transform: capitalize;
+  z-index: 7;
+  overflow: hidden;
+}
+.flex-column-ae {
+  position: absolute;
+  width: 157px;
+  height: 115px;
+  top: 144px;
+  left: 9px;
+  font-size: 0px;
+  z-index: 8;
+}
+.tasks {
+  display: block;
+  position: relative;
+  height: 60px;
+  margin: 0 0 0 0;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 6;
+}
+.rectangle-7 {
+  position: relative;
+  width: 153px;
+  height: 49px;
+  margin: 6px 0 0 4px;
+  cursor: pointer;
+  background: #9b87b3;
+  border: none;
+  z-index: 8;
+  border-radius: 10px;
+}
+.add-task {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 26.14px;
+  top: 12px;
+  left: 27px;
+  color: #ffffff;
+  font-family: Itim, var(--default-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transform: rotate(0.66deg);
+  z-index: 9;
+}
+.rectangle-8 {
+  position: relative;
+  width: 1427px;
+  height: 151px;
+  margin: 36px 0 0 0;
+  background: #e4d7f5;
+  z-index: 2;
+}
+.contact-us {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  height: 42px;
+  top: 55px;
+  left: 154px;
+  color: #343a40;
+  font-family: Itim, var(--default-font-family);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 42px;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 3;
+}
