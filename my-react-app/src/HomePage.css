@@ -1,0 +1,46 @@
+/* HomePage.css */
+@font-face {
+    font-family: 'Itim';
+    src: url('./fonts/Itim-Regular.ttf') format('truetype');
+    /* Add additional font formats (e.g., woff, woff2) as needed */
+}
+
+.header {
+    position: fixed; /* Position the header fixed to the top */
+    top: 0; /* Position at the top of the viewport */
+    left: 0; /* Align to the left */
+    width: 100%;
+    height: 150px; /* Adjust height as needed */
+    background-color: #E4D7F5; /* Header background color */
+    box-sizing: border-box;
+    padding-left: 20px; /* Add left padding */
+    text-align: left; /* Align text to the left */
+    line-height: 150px; /* Center text vertically */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.main-content {
+    margin-top: 150px; /* Adjust according to header height */
+    margin-bottom: 172px; /* Adjust according to footer height */
+    padding: 20px; /* Add padding to the main content area */
+}
+
+.footer {
+    position: fixed; /* Position the footer fixed to the bottom */
+    bottom: 0; /* Position at the bottom of the viewport */
+    left: 0; /* Align to the left */
+    width: 100%;
+    height: 172px; /* Footer height */
+    background-color: #E4D7F5; /* Footer background color */
+    text-align: center; /* Center text horizontally */
+    line-height: 172px; /* Center text vertically */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.Title {
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    font-size: 64px;
+    font-weight: 400;
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
