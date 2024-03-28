@@ -6,35 +6,33 @@
 }
 
 .header {
-    position: fixed; /* Position the header fixed to the top */
-    top: 0; /* Position at the top of the viewport */
-    left: 0; /* Align to the left */
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 150px; /* Adjust height as needed */
-    background-color: #E4D7F5; /* Header background color */
+    height: 150px;
+    background-color: #E4D7F5;
     box-sizing: border-box;
-    padding-left: 20px; /* Add left padding */
-    text-align: left; /* Align text to the left */
-    line-height: 150px; /* Center text vertically */
-    z-index: 1000; /* Ensure it's above other content */
+    padding-left: 20px;
+    text-align: left;
+    line-height: 150px;
+    z-index: 1000;
+    /* Add relative positioning */
+    position: relative;
 }
 
-.main-content {
-    margin-top: 150px; /* Adjust according to header height */
-    margin-bottom: 172px; /* Adjust according to footer height */
-    padding: 20px; /* Add padding to the main content area */
-}
+
 
 .footer {
     position: fixed; /* Position the footer fixed to the bottom */
     bottom: 0; /* Position at the bottom of the viewport */
     left: 0; /* Align to the left */
     width: 100%;
-    height: 172px; /* Footer height */
+    height: 140px; /* Footer height */
     background-color: #E4D7F5; /* Footer background color */
-    text-align: center; /* Center text horizontally */
     line-height: 172px; /* Center text vertically */
     z-index: 1000; /* Ensure it's above other content */
+    text-align: left;
 }
 
 .Title {
@@ -43,4 +41,57 @@
     font-weight: 400;
     margin: 0; /* Remove default margin */
     padding: 0; /* Remove default padding */
+    display: inline-block;
+    padding-left: 140px;
+}
+
+.Home-page{
+    margin-left: 500px;
+    padding-left: 100px;
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    font-size: 25px;
+    text-decoration: none; /* Remove underline */
+}
+.login{
+    margin-left: 100px;
+    padding-left: 100px;
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    font-size: 25px;
+    text-decoration: none; /* Remove underline */
+}
+.profile{
+    margin-left: 100px;
+    padding-left: 100px;
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    font-size: 25px;
+    text-decoration: none; /* Remove underline */
+}
+.contact{
+    margin-left: 100px;
+    padding-left: 100px;
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    font-size: 25px;
+    text-decoration: none; /* Remove underline */
+}
+.allTextHeader {
+    position: absolute;
+    top: 50%; /* Vertically center the elements within the header */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    left: 20px; /* Adjust as needed */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+}
+.Text-Box {
+    border: 2px solid black; /* Add solid black border */
+    padding: 10px; /* Add padding to create space between border and content */
+}
+
+.LeftBox{
+    flex: 1; /* Take up available space */
+}
+.main-content{
+    display: flex; /* Use flexbox for layout */
+}
+.RightBox{
+    flex: 1; /* Take up available space */
 }

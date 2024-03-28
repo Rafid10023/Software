@@ -11,6 +11,7 @@ const ContactPage = () => {
       <ul>
         <li>
           <Link to="/">HomePage</Link>
+          <Link to="/login">login</Link>
         </li>
         <li>
           <Link to="/contact">Contact</Link>

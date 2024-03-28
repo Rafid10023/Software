@@ -7,14 +7,34 @@ const HomePage = () => {
   return (
     <div>
       <div className="header">
-        <h2 className="Title">HappyHounds</h2>
-        <Link to="/">HomePage</Link> {/* Move the link inside the header */}
+        <div className="allTextHeader">
+        <p className="Title">HappyHounds</p>
+
+        <Link to="/" className="Home-page">
+          HOME
+        </Link>
+        <Link to="/profile" className="profile">
+          PROFILE
+        </Link>
+        <Link to="/login" className="login">
+          LOGIN
+        </Link>
+        </div>
+
       </div>
       <div className="main-content">
-        <p>bruh</p>
+        <div className="LeftBox">
+          <input type="text" placeholder="Enter your subject" className="Text-Box" />
+          <input type="text" placeholder="Enter your subject" className="Text-Box" />
+        </div>
+        <div className="RightBox">
+          <p>bruh</p>
+        </div>
       </div>
       <div className="footer">
-        <Link to="/contact">Contact</Link>
+        <Link to="/contact" className="contact">
+          CONTACT US
+        </Link>
       </div>
     </div>
   );
