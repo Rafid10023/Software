@@ -24,8 +24,8 @@ const HomePage = () => {
       </div>
       <div className="main-content">
         <div className="LeftBox">
-          <input type="text" placeholder="Enter your subject" className="Text-Box" />
-          <input type="text" placeholder="Enter your subject" className="Text-Box" />
+          <input type="text" placeholder="Enter your subject" className="Text-Box-subject" />
+          <textarea type="text" placeholder="Enter your subject" className="Text-Box-main" />
         </div>
         <div className="RightBox">
           <p>bruh</p>

@@ -81,9 +81,23 @@
     display: flex; /* Use flexbox for layout */
     align-items: center; /* Center items vertically */
 }
-.Text-Box {
+.Text-Box-subject {
     border: 2px solid black; /* Add solid black border */
     padding: 10px; /* Add padding to create space between border and content */
+    display: block;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 1000px;
+}
+.Text-Box-main{
+    border: 2px solid black; /* Add solid black border */
+    padding: 10px; /* Add padding to create space between border and content */
+    display: block;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 1000px;
+    height:600px;
+    vertical-align: top; /* Align text to the top */
 }
 
 .LeftBox{
@@ -95,3 +109,4 @@
 .RightBox{
     flex: 1; /* Take up available space */
 }
+
