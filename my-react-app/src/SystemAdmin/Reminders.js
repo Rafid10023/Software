@@ -40,7 +40,7 @@ const Reminders = () => {
     <div className="container"> {/* Apply container class */}
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <h1>Reminders</h1>
+      <h1>REMINDERS</h1>
       <input className='searchbar'
         type="text"
         placeholder="Search by name..."
