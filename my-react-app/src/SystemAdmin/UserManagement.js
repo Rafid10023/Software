@@ -6,10 +6,20 @@ import './style.css';
 const UserManagement = () => {
   // Sample data for demonstration
   const [users, setUsers] = useState([
-    { id: 1, name: 'User 1', type: 'Walker', userSince: '02/03/2024' },
-    { id: 2, name: 'User 2', type: 'Owner', userSince: '03/03/2024' },
-    { id: 3, name: 'User 3', type: 'Walker', userSince: '16/03/2024' },
-    { id: 4, name: 'User 4', type: 'Owner', userSince: '16/03/2024' },
+    { id: 1, name: 'Stephanie Rodriguez', type: 'Owner', userSince: '02/03/2024' },
+    { id: 2, name: 'Benjamin Patel', type: 'Owner', userSince: '02/03/2024' },
+    { id: 3, name: 'Jacob Russo', type: 'Walker', userSince: '03/03/2024' },
+    { id: 4, name: 'Alexander Khan', type: 'Owner', userSince: '03/03/2024' },
+    { id: 5, name: 'Olivia Jensen', type: 'Walker', userSince: '05/03/2024' },
+    { id: 6, name: 'Ethan Li', type: 'Walker', userSince: '07/03/2024' },
+    { id: 7, name: 'Madison Kim', type: 'Walker', userSince: '09/03/2024' },
+    { id: 8, name: 'Daniel Smith', type: 'Owner', userSince: '10/03/2024' },
+    { id: 9, name: 'Ava Sullivan', type: 'Walker', userSince: '15/03/2024' },
+    { id: 10, name: 'William Hernandez', type: 'Owner', userSince: '15/03/2024' },
+    { id: 11, name: 'Emma Williams', type: 'Owner', userSince: '15/03/2024' },
+    { id: 12, name: 'Grace Murphy', type: 'Walker', userSince: '17/03/2024' },
+    { id: 13, name: 'Matthew Thompson', type: 'Owner', userSince: '19/03/2024' },
+    { id: 14, name: 'Isabella Martinez', type: 'Walker', userSince: '20/03/2024' },
   ]);
 
   const [searchQuery, setSearchQuery] = useState('');
@@ -29,11 +39,11 @@ const UserManagement = () => {
     <div className="container"> {/* Apply container class */}
     <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <h1>User Management</h1>
+      <h1>USER MANAGEMENT</h1>
       <input
       className='searchbar'
         type="text"
-        placeholder="Search by user name..."
+        placeholder="Search for user"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
