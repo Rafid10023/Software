@@ -14,11 +14,14 @@ const HomePage = () => {
 
   return (
     <div>
-      <div className="header">
-        <div className="allTextHeader">
-          <p className="Title">HappyHounds</p>
+      <div class="header">
+        <div class="allTextHeader">
+            <div>
+                <p class="Title">HappyHounds</p>
+            </div>
 
-          <Link to="/" className="Home-page">
+            <div class="headerLinks">
+                <Link to="/" className="Home-page">
             HOME
           </Link>
           <Link to="/profile" className="profile">
@@ -27,11 +30,15 @@ const HomePage = () => {
           <Link to="/login" className="login">
             LOGIN
           </Link>
+            </div>
+
         </div>
-      </div>
-      <div className="main-content">
-        <div className="LeftBox">
-          <p className="MessageTitle">Send us a Message</p>
+    </div>
+
+
+    <div class="main-content">
+        <div class="LeftBox">
+            <p className="MessageTitle">Send us a Message</p>
           <input
             type="text"
             placeholder="Enter your subject"
@@ -39,24 +46,32 @@ const HomePage = () => {
             value={subject}
             onChange={(e) => setSubject(e.target.value)}
           />
-          <textarea
+            <textarea
             type="text"
             placeholder="Enter your subject"
             className="Text-Box-main"
             value={mainText}
             onChange={(e) => setMainText(e.target.value)}
           />
-          <button onClick={handleClearText}>Clear Text</button>
+
+            <button onClick={handleClearText}>Clear Text</button>
         </div>
-        <div className="RightBox">
-          <p>bruh</p>
+
+        <div class="RightBox">
+            <div class="box">Box 1</div>
+            <div class="box">Box 2</div>
+            <div class="box">Box 3</div>
+            <div class="box">Box 4</div>
         </div>
-      </div>
-      <div className="footer">
+
+    </div>
+
+    <div class="footer">
         <Link to="/contact" className="contact">
           CONTACT US
         </Link>
-      </div>
+    </div>
+
     </div>
   );
 };
