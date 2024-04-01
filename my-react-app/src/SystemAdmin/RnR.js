@@ -51,7 +51,7 @@ const RnR = () => {
     <div className="container"> {/* Apply container class */}
     <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <h1>Ratings and Reviews</h1>
+      <h1>RATINGS AND REVIEWS</h1>
       <div>
         <label>Filter By:</label>
         <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
