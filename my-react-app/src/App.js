@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./HomePage";
+import ContactPage from "./ContactPage";
+import login from "./login";
+import profile from "./profile";
+import SystemAdmin from "./SystemAdmin/SystemAdmin";
+import UserManagement from "./SystemAdmin/UserManagement";
+import RnR from "./SystemAdmin/RnR";
+import Reminders from "./SystemAdmin/Reminders";
+import Settings from "./SystemAdmin/Settings";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/contact" element={<ContactPage />} />{" "}
+          <Route path="/profile" element={<profile />} />{" "}
+          <Route path="/login" element={<login />} />{" "}
+          <Route path="/system-admin" element={<SystemAdmin />} />{" "}
+          <Route path="/user-management" element={<UserManagement />} />{" "}
+          <Route path="/rnr" element={<RnR />} />{" "}
+          <Route path="/reminders" element={<Reminders />} />{" "}
+          <Route path="/settings" element={<Settings />} />{" "}
+          {/* Use ContactPage component for /contact route */}
+        </Routes>
+      </Router>
     </div>
   );
-}
+};
 
 export default App;
