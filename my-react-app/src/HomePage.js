@@ -1,9 +1,7 @@
 // HomePage.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import emailSymbol from './images/email.jpg';
-import locationSymbol from './images/location.jpg';
-import messageSymbol from './images/message.jpg';
+import { BsEnvelope, BsFillGeoAltFill, BsFillChatLeftQuoteFill, BsFillTelephoneFill } from "react-icons/bs";
 import phoneSymbol from './images/phone.jpg';
 import "./HomePage.css";
 
@@ -66,16 +64,16 @@ const HomePage = () => {
 
         <div class="RightBox">
             <div class="box">
-            <img src={emailSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            <BsEnvelope />
             </div>
             <div class="box">
-            <img src={locationSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            <BsFillGeoAltFill />
             </div>
             <div class="box">
-            <img src={messageSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            <BsFillChatLeftQuoteFill />
             </div>
             <div class="box">
-            <img src={phoneSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            <BsFillTelephoneFill />
             </div>
         </div>
 
