@@ -28,7 +28,7 @@ const Settings = () => {
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <div className='settings-content'>
-      <h2>Settings</h2>
+      <h2>SETTINGS</h2>
       <form className='settings-form' onSubmit={handleSubmit}>
         <div>
           <label>
