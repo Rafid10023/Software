@@ -1,6 +1,10 @@
 // HomePage.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import emailSymbol from './images/email.jpg';
+import locationSymbol from './images/location.jpg';
+import messageSymbol from './images/message.jpg';
+import phoneSymbol from './images/phone.jpg';
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -58,10 +62,18 @@ const HomePage = () => {
         </div>
 
         <div class="RightBox">
-            <div class="box">Box 1</div>
-            <div class="box">Box 2</div>
-            <div class="box">Box 3</div>
-            <div class="box">Box 4</div>
+            <div class="box">
+            <img src={emailSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            </div>
+            <div class="box">
+            <img src={locationSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            </div>
+            <div class="box">
+            <img src={messageSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            </div>
+            <div class="box">
+            <img src={phoneSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
+            </div>
         </div>
 
     </div>
