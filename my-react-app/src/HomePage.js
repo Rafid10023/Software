@@ -1,89 +1,70 @@
-// HomePage.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import emailSymbol from './images/email.jpg';
-import locationSymbol from './images/location.jpg';
-import messageSymbol from './images/message.jpg';
-import phoneSymbol from './images/phone.jpg';
+import axios from "axios";
+import emailSymbol from "./images/email.jpg";
+import locationSymbol from "./images/location.jpg";
+import messageSymbol from "./images/message.jpg";
+import phoneSymbol from "./images/phone.jpg";
 import "./HomePage.css";
 
 const HomePage = () => {
-  const [subject, setSubject] = useState("");
-  const [mainText, setMainText] = useState("");
+  const [jsonData, setJsonData] = useState([]);
 
-  const handleClearText = () => {
-    setSubject("");
-    setMainText("");
+  useEffect(() => {
+    // Fetch the JSON data from your Flask server
+    fetch("/members")
+      .then((response) => response.json())
+      .then((data) => {
+        setJsonData(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching JSON data:", error);
+      });
+  }, []);
+
+  const handleDelete = (arrayIndex, objIndex) => {
+    axios
+      .delete(`/delete_data/${arrayIndex}/${objIndex}`)
+      .then((response) => {
+        console.log(response.data);
+        // If deletion is successful, update the state to reflect the change
+        setJsonData((prevData) => {
+          const newData = [...prevData];
+          newData[arrayIndex].splice(objIndex, 1);
+          return newData;
+        });
+      })
+      .catch((error) => {
+        console.error("Error deleting data:", error);
+      });
   };
 
   return (
     <div>
-      <div class="header">
-        <div class="allTextHeader">
-            <div>
-                <p class="Title">HappyHounds</p>
-            </div>
+      <h1>JSON Data</h1>
+      <ul>
+        {jsonData.map((array, arrayIndex) => (
+          <div key={arrayIndex}>
+            {array.map((obj, objIndex) => (
+              <li key={objIndex}>
+                <p>Subject: {obj.subject}</p>
+                <p>Main Text: {obj.mainText}</p>
+                <button onClick={() => handleDelete(arrayIndex, objIndex)}>Delete</button>
+              </li>
+            ))}
+          </div>
+        ))}
+      </ul>
 
-            <div class="headerLinks">
-                <Link to="/" className="Home-page">
-            HOME
-          </Link>
-          <Link to="/profile" className="profile">
-            PROFILE
-          </Link>
-          <Link to="/login" className="login">
-            LOGIN
-          </Link>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="main-content">
-        <div class="LeftBox">
-            <p className="MessageTitle">Send us a Message</p>
-          <input
-            type="text"
-            placeholder="Enter your subject"
-            className="Text-Box-subject"
-            value={subject}
-            onChange={(e) => setSubject(e.target.value)}
-          />
-            <textarea
-            type="text"
-            placeholder="Enter your subject"
-            className="Text-Box-main"
-            value={mainText}
-            onChange={(e) => setMainText(e.target.value)}
-          />
-
-            <button onClick={handleClearText}>Clear Text</button>
-        </div>
-
-        <div class="RightBox">
-            <div class="box">
-            <img src={emailSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
-            </div>
-            <div class="box">
-            <img src={locationSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
-            </div>
-            <div class="box">
-            <img src={messageSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
-            </div>
-            <div class="box">
-            <img src={phoneSymbol} alt="Example" className="Symbol" style={{ width: '4vw', height: 'auto' }} />
-            </div>
-        </div>
-
-    </div>
-
-    <div class="footer">
-        <Link to="/contact" className="contact">
-          CONTACT US
-        </Link>
-    </div>
-
+      <ul>
+        <li>
+          <Link to="/">HomePage</Link>
+          <Link to="/login">login</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
     </div>
   );
 };
