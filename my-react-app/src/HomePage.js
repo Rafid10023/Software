@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { BsEnvelope, BsFillGeoAltFill, BsFillChatLeftQuoteFill, BsFillTelephoneFill } from "react-icons/bs";
-import phoneSymbol from './images/phone.jpg';
 import "./HomePage.css";
 
 const HomePage = () => {
