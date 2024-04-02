@@ -33,6 +33,9 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
             <li className='sidebar-list-item'>
                 <Link to='/settings'><BsFillGearFill className='icon'/> Settings</Link>
             </li>
+            <li className='sidebar-list-item'>
+                <Link to='/login'>Logout</Link>
+            </li>
         </ul>
     </aside>
   )
