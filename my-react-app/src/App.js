@@ -10,6 +10,7 @@ import UserManagement from "./SystemAdmin/UserManagement";
 import RnR from "./SystemAdmin/RnR";
 import Reminders from "./SystemAdmin/Reminders";
 import Settings from "./SystemAdmin/Settings";
+import LoginAdmin from "./LoginPages/login";
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />{" "}
           <Route path="/profile" element={<profile />} />{" "}
-          <Route path="/login" element={<login />} />{" "}
+          <Route path="/login" element={<LoginAdmin />} />{" "}
           <Route path="/system-admin" element={<SystemAdmin />} />{" "}
           <Route path="/user-management" element={<UserManagement />} />{" "}
           <Route path="/rnr" element={<RnR />} />{" "}
