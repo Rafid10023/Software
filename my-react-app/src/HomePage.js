@@ -32,9 +32,6 @@ const HomePage = () => {
           <Link to="/login" className="login">
             LOGIN
           </Link>
-          <Link to="/system-admin" className="login">
-            SYSADMIN
-          </Link>
             </div>
 
         </div>
