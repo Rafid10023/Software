@@ -36,7 +36,7 @@ const UserManagement = () => {
   }
 
   return (
-    <div className="container"> {/* Apply container class */}
+    <div className="sys-container"> {/* Apply container class */}
     <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <h1>USER MANAGEMENT</h1>
