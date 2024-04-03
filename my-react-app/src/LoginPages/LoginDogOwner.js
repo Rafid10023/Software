@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
+import axios from 'axios';
 
 function LoginDogOwner({ credentials }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    const user = credentials.find(
-      (cred) => cred.email === email && cred.password === password
-    );
-    if (user) {
-      alert('Login successful!');
-    } else {
-      alert('Invalid email or password!');
+  const handleLogin = async () => {
+    try {
+      const response = await axios.post('/login', { email, password });
+      if (response.data.success) {
+        alert('Login successful');
+        // Redirect or perform other actions upon successful login
+      } else {
+        alert('Invalid username or password');
+      }
+    } catch (error) {
+      console.error('Error logging in:', error);
+      alert('An error occurred while logging in');
     }
   };
 

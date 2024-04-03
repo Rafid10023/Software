@@ -1,26 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
-import { getUserDatabase } from './UserDatabase.js';
+
 
 function LoginAdmin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(email);
-    const users = getUserDatabase();
-    const foundUser = users.find(user => user[0] === email && user[1] === password);
-    if (foundUser) {
-      
-      console.log('Login successful');
-    } else {
-      
-      console.log('Incorrect username or password');
+    useEffect(() => {
+      fetch("/login").then(
+        res => res.json()
+      ).then(
+        data => {
+          if (data === true)
+            console.log("login successful")
+          else
+            console.log("login not successful")
+        }
+      )
     }
-  }
+
+    )
+
   return (
-    <form onSubmit={handleSubmit} method='POST'>
+    <form method='POST'>
     <div className="container">
       <div className="login-box">
         <h1>HappyHounds</h1>
@@ -39,7 +41,7 @@ function LoginAdmin() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button type='submit'>LOGIN</button>
+        <button >LOGIN</button>
       </div>
     </div>
     </form>

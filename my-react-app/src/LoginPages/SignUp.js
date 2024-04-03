@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
-import { addUser } from './UserDatabase.js';
+
+import { usersData } from './usersData.js';
 function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -9,7 +10,8 @@ function SignUp() {
     const handleSubmit = (e) => {
       e.preventDefault();
       console.log(email);
-      addUser([email, password])
+      usersData.push(["hello","hi"]);
+      usersData.push([email, password]);
     }
 
 
