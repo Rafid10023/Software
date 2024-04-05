@@ -1,4 +1,4 @@
-/* HomePage.css */
+/* ContactPage.css */
 @font-face {
     font-family: 'Itim';
     src: url('./fonts/Itim-Regular.ttf') format('truetype');
@@ -60,95 +60,23 @@ body {
     box-sizing: border-box;
     min-height: calc(100vh - 250px);
     background-color: #F5F4EF;
-}
-
-.MessageTitle {
-    font-size: 20px;
-    font-weight: 900;
-}
-
-
-@media screen and (max-width: 768px) {
-    .main-content {
-        flex-direction: column;
-        /* Change to row layout */
-    }
-
-    .LeftBox,
-    .RightBox {
-        flex-basis: 50%;
-        margin-bottom: 0px;
-    }
-
-    .RightBox .box {
-        height: 80px;
-    }
-}
-
-.LeftBox,
-.RightBox {
-    flex: 1;
-}
-
-
-.LeftBox {
-    display: flex;
-    flex-direction: column;
-    background-color: #E4D7F5;
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    margin: 50px 0;
-    margin-left: 50px;
-    margin-right: 50px;
-
-
-}
-
-
-.LeftBox > * {
-    padding: 10px;
-    margin:  10px 40px;
-    resize: none;
+    justify-content: center;
     
 }
 
-.Text-Box-subject {
-    border: 1px solid black;
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    width: 80%;
-    font-size: 15px;
-}
-
-.Text-Box-main {
-    border: 1px solid black;
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    height: 250px;
-    width: 80%;
-    font-size: 15px;
-}
-
-
-/* RIGHT BOX SECTION */
-.RightBox {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.RightBox .box {
-    width: calc(50% - 20px); /* 50% width with spacing */
-    margin-bottom: 30px; /* Spacing between boxes */
-    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.2); /* Box shadow */
-    border-radius: 5px; /* Rounded corners */
-    background-color: rgb(255, 255, 255); /* Box background color */
-    border: 1px solid #000;
-    display: flex;
-    align-items: center;
-    flex-direction: column; /* Display boxes in a column */
+/* Add a border and padding to the li elements to create a round box */
+.main-content ul li {
+    border: 2px solid #E4D7F5;
+    border-radius: 10px; /* Add border-radius to make the border round */
+    padding: 10px; /* Add padding to create space between content and border */
+    margin-bottom: 10px; /* Add margin-bottom to separate each submission */
+    list-style-type: none;
+    background-color: #E4D7F5;
+    width: 50vw;
 
 }
+
+
 
 
 
@@ -184,3 +112,8 @@ body {
 .Symbol{
     padding: 10px;
 }
+
+.TitleMain{
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+}
+/* Use Flexbox to control layout */

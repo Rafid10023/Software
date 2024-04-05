@@ -41,30 +41,65 @@ const HomePage = () => {
 
   return (
     <div>
-      <h1>JSON Data</h1>
-      <ul>
-        {jsonData.map((array, arrayIndex) => (
-          <div key={arrayIndex}>
-            {array.map((obj, objIndex) => (
-              <li key={objIndex}>
-                <p>Subject: {obj.subject}</p>
-                <p>Main Text: {obj.mainText}</p>
-                <button onClick={() => handleDelete(arrayIndex, objIndex)}>Delete</button>
-              </li>
-            ))}
+      <div className="header">
+        <div className="allTextHeader">
+          <div>
+            <p className="Title">HappyHounds</p>
           </div>
-        ))}
-      </ul>
 
-      <ul>
-        <li>
-          <Link to="/">HomePage</Link>
-          <Link to="/login">login</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
+          <div className="headerLinks">
+            <Link to="/" className="Home-page">
+              HOME
+            </Link>
+            <Link to="/profile" className="profile">
+              PROFILE
+            </Link>
+            <Link to="/login" className="login">
+              LOGIN
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div className="main-content">
+        
+        <div>
+
+          <ul>
+            <li><header className="TitleMain">Welcome Back USERNAME HERE </header></li>
+
+
+
+            {jsonData.map((array, arrayIndex) => (
+              <div key={arrayIndex}>
+                {array.map((obj, objIndex) => (
+                  <li key={objIndex}>
+                    <p>Subject: {obj.subject}</p>
+                    <p>Main Text: {obj.mainText}</p>
+                    <button onClick={() => handleDelete(arrayIndex, objIndex)}>Delete</button>
+
+
+
+                  </li>
+                ))}
+
+
+                
+              </div>
+            ))}
+        
+          </ul>
+
+      
+        </div>
+ 
+      </div>
+
+      <div className="footer">
+        <Link to="/contact" className="contact">
+          CONTACT US
+        </Link>
+      </div>
     </div>
   );
 };
