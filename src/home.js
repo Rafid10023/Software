@@ -112,9 +112,10 @@ export default function Home() {
                 </div>
             </div>
             {currentAppointment && (
-                <div className="current-appointment-banner">
-                    Appointment with {currentAppointment.walker} is happening now!
-                </div>
+                <div className="banner-container">
+                    <span className="banner-text">Appointment with {currentAppointment.walker} is happening now!</span>
+                    <button onClick={() => setCurrentAppointment(null)} className="banner-close">&times;</button>
+              </div>
             )}
             <div className='rectangle-3'>
                 <div className='flex-column-d'>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './index.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { v4 as uuidv4 } from 'uuid';
 
 const ConfirmPage = () => {
   // Retrieve the stored date when the component loads
@@ -27,6 +28,9 @@ const ConfirmPage = () => {
         }
     };
 
+    function generateUniqueId() {
+      return uuidv4(); // Generates a unique UUID
+    }
 
     const handleTimeSelection = (timeSlot) => {
         setSelectedTime(timeSlot);
@@ -44,9 +48,11 @@ const ConfirmPage = () => {
     const confirmAppointment = () => {
       if (selectedTime && selectedWalker) {
         const appointment = {
+          id: generateUniqueId(), // This function needs to create a unique ID for each appointment
           date: selectedDate.toISOString(),
           time: selectedTime,
           walker: selectedWalker,
+          rating: 0, // Initial rating, which can be updated later
         };
     
         // Send a POST request to the Flask server

@@ -1265,3 +1265,46 @@ button {
   text-align: center;
   
 }
+
+.banner-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  z-index: 1000; /* Ensure it's above other content */
+  transition: top 0.3s; /* Smoothly show and hide the banner */
+}
+
+.banner-text {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: Itim, var(--default-font-family);
+}
+
+.banner-close {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.past-app {
+  color: #5a5a5a;
+  height: 42px;
+  font-family: Itim, var(--default-font-family);
+  font-size: 35px;
+  font-weight: 400;
+  margin-top: 250px;
+  margin-left: 380px;
+
+}
