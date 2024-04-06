@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 
-
-
 function LoginDogOwner() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+
   const handleLogin = async () => {
     const response = await fetch('/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ username, password })
     });
     const data = await response.json();
-    if (data.success) {
-      //ADD LINK TO DOG OWNER PAGE HERE.
+    if (response.ok) {
       console.log("Login successful");
     } else {
       console.log("Login unsuccessful");
     }
-    
-  };
+  }
 
   return (
     <div className="container">
@@ -31,10 +28,10 @@ function LoginDogOwner() {
         <p>Welcome back!</p>
         <div className="input-container">
           <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <input
             type="password"

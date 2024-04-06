@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import "./LoginPage.css";
 
-
-
-
-function SignUp() {
+function SignUpDogOwner() {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("/signup", {
+    const response = await fetch("/signupDogOwner", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -56,4 +53,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignUpDogOwner;

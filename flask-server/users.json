@@ -1,0 +1,90 @@
+{
+    "dog_owners": [
+        {
+            "username": "owner1",
+            "password": "password1"
+        },
+        {
+            "username": "owner2",
+            "password": "password2"
+        },
+        {
+            "username": "owner3",
+            "password": "password3"
+        },
+        {
+            "username": "bruh",
+            "password": "hello"
+        },
+        {
+            "username": "sayed",
+            "password": "bruhbruhbruh"
+        },
+        {
+            "username": "asdfasdf",
+            "password": "zxcvaerwfgwe hr wrsgh"
+        },
+        {
+            "username": "fbndrfg hb",
+            "password": "wed zsdv af"
+        },
+        {
+            "username": "abghfj ert h",
+            "password": "wsaerfaw fawef"
+        },
+        {
+            "username": "rafid",
+            "password": "uddin"
+        }
+    ],
+    "dog_walkers": [
+        {
+            "username": "walker1",
+            "password": "password1"
+        },
+        {
+            "username": "walker2",
+            "password": "password2"
+        },
+        {
+            "username": "walker3",
+            "password": "password3"
+        },
+        {
+            "username": "hello",
+            "password": "zxcv"
+        },
+        {
+            "username": "szdfvasf qaw",
+            "password": "sdfg sertg serg"
+        }
+    ],
+    "system_admins": [
+        {
+            "username": "admin1",
+            "password": "password1"
+        },
+        {
+            "username": "admin2",
+            "password": "password2"
+        },
+        {
+            "username": "admin3",
+            "password": "password3"
+        }
+    ],
+    "customer_support": [
+        {
+            "username": "support1",
+            "password": "password1"
+        },
+        {
+            "username": "support2",
+            "password": "password2"
+        },
+        {
+            "username": "support3",
+            "password": "password3"
+        }
+    ]
+}

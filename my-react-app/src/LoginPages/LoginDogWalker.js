@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './LoginPage.css';
 
 function LoginDogWalker() {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleLogin = async () => {
@@ -11,11 +11,10 @@ function LoginDogWalker() {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ username, password })
     });
     const data = await response.json();
-    if (data.success) {
-      //ADD LINK TO DOG WALKER PAGE HERE
+    if (response.ok) {
       console.log("Login successful");
     } else {
       console.log("Login unsuccessful");
@@ -29,10 +28,10 @@ function LoginDogWalker() {
         <p>Welcome back!</p>
         <div className="input-container">
           <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
           />
           <input
             type="password"
