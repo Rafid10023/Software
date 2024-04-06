@@ -5,9 +5,22 @@ function LoginDogWalker() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    console.log('Logging in with:', email, password);
-  };
+  const handleLogin = async () => {
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await response.json();
+    if (data.success) {
+      //ADD LINK TO DOG WALKER PAGE HERE
+      console.log("Login successful");
+    } else {
+      console.log("Login unsuccessful");
+    }
+  }
 
   return (
     <div className="container">

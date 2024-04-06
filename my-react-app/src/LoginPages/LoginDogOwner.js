@@ -16,6 +16,7 @@ function LoginDogOwner() {
     });
     const data = await response.json();
     if (data.success) {
+      //ADD LINK TO DOG OWNER PAGE HERE.
       console.log("Login successful");
     } else {
       console.log("Login unsuccessful");

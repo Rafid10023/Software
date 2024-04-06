@@ -6,7 +6,7 @@ function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState([]);
-  
+    
     const handleSubmit = async () => {
       const response = await fetch('/signup', {
         method: 'POST',
@@ -17,10 +17,8 @@ function SignUp() {
       });
       const data = await response.json();
       if (data.success) {
-        // Redirect or show success message
         console.log("Sign up successful");
       } else {
-        // Show error message or handle unsuccessful sign up
         console.log("Sign up unsuccessful");
       }
       

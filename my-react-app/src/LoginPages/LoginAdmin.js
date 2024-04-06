@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './LoginPage.css';
 
 
@@ -17,6 +17,7 @@ function LoginAdmin() {
     });
     const data = await response.json();
     if (data.success) {
+      //ADD LINK TO ADMIN PAGE HERE
       console.log("Login successful");
     } else {
       console.log("Login unsuccessful");
