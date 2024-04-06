@@ -1,17 +1,29 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
 
-import { usersData } from './usersData.js';
+
 function SignUp() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState([]);
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      console.log(email);
-      usersData.push(["hello","hi"]);
-      usersData.push([email, password]);
+    const handleSubmit = async () => {
+      const response = await fetch('/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email, password })
+      });
+      const data = await response.json();
+      if (data.success) {
+        // Redirect or show success message
+        console.log("Sign up successful");
+      } else {
+        // Show error message or handle unsuccessful sign up
+        console.log("Sign up unsuccessful");
+      }
+      
     }
 
 

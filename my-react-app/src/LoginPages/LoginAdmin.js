@@ -2,24 +2,26 @@ import React, { useState, useEffect } from 'react';
 import './LoginPage.css';
 
 
+
 function LoginAdmin() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-    useEffect(() => {
-      fetch("/login").then(
-        res => res.json()
-      ).then(
-        data => {
-          if (data === true)
-            console.log("login successful")
-          else
-            console.log("login not successful")
-        }
-      )
+  const handleLogin = async () => {
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ email, password })
+    });
+    const data = await response.json();
+    if (data.success) {
+      console.log("Login successful");
+    } else {
+      console.log("Login unsuccessful");
     }
-
-    )
+  }
 
   return (
     <form method='POST'>
@@ -41,7 +43,7 @@ function LoginAdmin() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <button >LOGIN</button>
+        <button onClick={handleLogin}>LOGIN</button>
       </div>
     </div>
     </form>

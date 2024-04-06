@@ -25,7 +25,7 @@ function Users() {
 
   return (
     <div className="container">
-      <h1>Are you a...? </h1>
+      <h1>Are you a... </h1>
       <div className="buttonGroup">
         <div className="buttonBox">
           <h2>DOG WALKER</h2>
