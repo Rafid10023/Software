@@ -1,66 +1,51 @@
-import React from 'react';
-import './index.css';
+import Home from './routes/Home';
+import ErrorPage from './routes/ErrorPage';
+import Requests from './routes/Request';
+import Chat from './routes/Chat';
+import './App.css';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import './App.css';
+import React, { useState, useEffect} from 'react'
 
-export default function Main() {
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/Requests",
+    element: <Requests />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/Chat",
+    element: <Chat />,
+    errorElement: <ErrorPage />
+  }
+]);
+
+function App() {
+  const [data,setData] = useState([{}])
+  useEffect(() =>{
+    fetch("http://localhost:5000/members").then(
+      res=> res.json()
+    ).then(
+      data => {
+        setData(data);
+        console.log(data);
+      }
+    )
+  },[])
   return (
-    <div className='main-container'>
-      <div className='rectangle'>
-        <span className='happy-hounds'>HappyHounds</span>
-        <div className='frame'>
-          <div className='frame-1'>
-            <span className='appointment'>Appointment</span>
-            <span className='history'>History</span>
-            <span className='chat'>chat</span>
-            <button className='rectangle-2' />
-            <span className='logout'>logout</span>
-          </div>
-        </div>
-      </div>
-      <div className='rectangle-3'>
-        <div className='flex-column-d'>
-          <span className='welcome-hassan'>Welcome hassan</span>
-          <div className='rectangle-4'>
-            <span className='today'>today: </span>
-            <span className='march'>24 March:</span>
-            <div className='ellipse' />
-            <span className='liam-time'>liam | 11:00</span>
-            <div className='ellipse-5' />
-            <span className='emily-time'>emily | 16:00</span>
-          </div>
-        </div>
-        <span className='upcoming-appointments'>
-          upcoming
-          <br />
-          appointments
-        </span>
-      </div>
-      <div className='rectangle-6'>
-        <span className='specific-route'>
-          1: Follow a Specific Route
-          <br />
-          2: Feeding Instructions
-          <br />
-          3: Medication Administration
-          <br />
-          4: Update on Dog's Behaviour
-          <br />
-          5: Reinforce Training Commands <br />
-          6: Apply Treatments
-          <br />
-          7: Watch for Health Issues
-          <br />
-          8: Avoid Specific Areas or Dogs
-        </span>
-        <div className='flex-column-ae'>
-          <span className='tasks'>Tasks</span>
-          <button className='rectangle-7'>
-            <span className='add-task'>Add task</span>
-          </button>
-        </div>
-      </div>
-      <div className='rectangle-8'>
-        <span className='contact-us'>Contact Us</span>
-      </div>
+    <div className='app'>
+      <RouterProvider router={router} />
     </div>
-  );
+  )
 }
+
+export default App;

@@ -1,0 +1,10 @@
+.app-background {
+  background-color: #F5F4EF; /* Set the background color */
+
+  height: 100vh; /* Make sure the app covers up the whole screen */
+  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr 5fr 4fr;
+  
+}
+

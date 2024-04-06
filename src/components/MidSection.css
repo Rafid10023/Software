@@ -1,0 +1,85 @@
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .approved-users{
+    background-color: #E4D7F5;; /* Adjust the color to match your design */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .approved-users {
+    width: 60%; /* Adjust width as needed */
+    max-height: 575px; /* Adjust height as needed */
+    overflow-y: auto;
+  }
+  
+  .side-section {
+    width: 25%; /* Adjust width as needed */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 45px;
+  }
+  
+  .requests-hub, .chat {
+    background-color: #E4D7F5; /* Adjust the color to match your design */
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  li span {
+    font-style: italic;
+  }
+
+  .side-button-1,
+.side-button-2 {
+  background-color: #E4D7F5;
+  cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+}
+
+.side-button-1:hover,
+.side-button-2:hover {
+  background-color: #f0f0f0;
+}
+
+span.side-button-2 {
+  margin-bottom: 225px;
+}
+span.side-button-1 {
+  margin-top: 125px;
+}
+
+span.side-button-1, span.side-button-2 {
+  cursor: pointer;
+  text-align: center;
+  font-size: 45px;
+  border: none;
+  border-radius: 30px;
+}
+
+h1 {
+  color: black;
+  margin-left: 75px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 35px;
+}
+

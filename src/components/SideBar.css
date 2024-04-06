@@ -1,0 +1,26 @@
+.sidebar {
+    background-color: #661c86;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menuItems {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+  }
+  
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
