@@ -1,0 +1,875 @@
+:root {
+    --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
+      "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
+      "Source Han Sans CN", sans-serif;
+  }
+ 
+  .main-container-Home{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #F5F4EF;
+    /* margin: 125px 0;  */
+    margin-top: 100px;
+    /* height: 800px; */
+    /* padding: 20px; */
+    box-sizing: border-box;
+    width: 100%;
+    min-height: calc(100vh - 200px);
+  }
+
+  .header-Home{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:center;
+    height: 100px;
+    background-color: #E4D7F5;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .allTextHeader-Home {
+    display: flex;
+    /* height: 100%; */
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 0 10px; */
+  }
+  
+  .happy-hounds-Home {
+    font-family: 'Itim', sans-serif; 
+    margin: 0;    
+    font-size: 35px;
+  }
+
+  .frame-1-Home {
+    font-family: 'Itim', sans-serif;
+    /* flex-shrink: 0; */
+    display: flex;
+    justify-content: flex-end;
+    /* align-items: center; */
+    /* flex-grow: 1; */
+    flex-wrap: wrap;
+  }
+
+  .appointment-Home, .history-Home, .walk-Home, .chat-Home, .profile-Home, .home-Home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  .logout-Home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-left: 10px;
+    color: #ffffff;
+    background: #7d3f98;
+
+  }
+  
+
+  .vertical-container-Home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    min-height: 20vh;
+    /* margin: 20px 0; */
+  }
+
+  .vertical-rectangle-1-Home, .vertical-rectangle-2-Home {
+    position: relative;
+    width: 1120px;
+    height: 350px;
+    margin: 41px 0 0 154px;
+    background: #f7f7f7;
+    border: 1px solid #000000;
+    z-index: 4;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  .vertical-rectangle-1-Home-Wrapper{
+    position: relative;
+    width: 1120px;
+    height: 794px;
+
+
+  }
+  .calendar-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .confirm{
+    position: relative;
+    width: 153px;
+    height: 49px;
+    margin-top: -210px;
+    cursor: pointer;
+    background: #9B87B3;
+    border: none;
+    z-index: 103;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: Itim, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 42px;
+    white-space: nowrap;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flex-column-d-Home {
+    position: absolute;
+    width: 752px;
+    height: 327px;
+    top: 22px;
+    left: 322px;
+    font-size: 0px;
+    z-index: 12;
+  }
+
+  .welcome-Name-Home {
+    display: block;
+    position: relative;
+    height: 60px;
+    margin: 0 0 0 0;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  .rectangle-Appointment-Home {
+    position: relative;
+    width: 752px;
+    height: 248px;
+    margin: 19px 0 0 0;
+    font-size: 0px;
+    background: #f7f7f7;
+    z-index: 12;
+    overflow: visible auto;
+    border-radius: 10px;
+  }
+
+  .today-Home {
+    display: block;
+    position: relative;
+    height: 36px;
+    margin: 13px 0 0 15px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 13;
+  }
+
+
+  .future-Home {
+    display: block;
+    position: relative;
+    height: 36px;
+    margin: 75px 0 0 15px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 18;
+  }
+
+  .ellipse-today-Home {
+    position: absolute;
+    width: 66px;
+    height: 69px;
+    top: 50px;
+    left: 15px;
+    background: url(./images/EmptyProfile.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 14;
+  }
+
+  .today-time-Home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 36px;
+    top: 67px;
+    left: 101px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    z-index: 16;
+  }
+
+  .ellipse-future-Home {
+    position: absolute;
+    width: 66px;
+    height: 69px;
+    top: 165px;
+    left: 15px;
+    background: url(./images/EmptyProfile.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 15;
+  }
+  
+  .future-time-Home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 36px;
+    top: 182px;
+    left: 101px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    z-index: 17;
+  }
+
+  .upcoming-appointments-Home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 291px;
+    height: 96px;
+    top: 151px;
+    left: 9px;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: left;
+    text-overflow: initial;
+    text-transform: uppercase;
+    z-index: 11;
+    overflow: hidden;
+  }
+
+ 
+  .horizontal-container-Home {
+    display: flex;
+    flex-direction: row;
+    
+  }
+  .horizontal-rectangle-1-Home {
+    position: relative;
+    width: 900px;
+    height: 250px;
+    margin: 41px 0 0 154px;
+    background: #f7f7f7;
+    border: 1px solid #000000;
+    z-index: 4;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+
+  .task-details-Home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 912px;
+    height: 315px;
+    top: 31px;
+    left: 189px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-overflow: initial;
+    text-transform: capitalize;
+    z-index: 7;
+    overflow: hidden;
+  }
+
+  .flex-column-ae-Home {
+    position: absolute;
+    width: 157px;
+    height: 115px;
+    top: 144px;
+    left: 9px;
+    font-size: 0px;
+    z-index: 8;
+  }
+
+  .tasks-Home {
+    display: block;
+    position: relative;
+    height: 60px;
+    margin: 0 0 0 0;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 6;
+  }
+
+  .task-button-Home {
+    position: relative;
+    width: 153px;
+    height: 49px;
+    margin: 6px 0 0 4px;
+    cursor: pointer;
+    background: #9b87b3;
+    border: none;
+    z-index: 8;
+    border-radius: 10px;
+  }
+
+  .add-task-Home {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    height: 26.14px;
+    top: 12px;
+    left: 27px;
+    color: #ffffff;
+    font-family: Itim, var(--default-font-family);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: rotate(0.66deg);
+    z-index: 9;
+  }
+  
+  .horizontal-rectangle-2-Home {
+    position: relative;
+    width: 900px;
+    height: 250px;
+    margin: 41px 0 0 154px;
+    background: #f7f7f7;
+    border: 1px solid #000000;
+    z-index: 4;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  
+  
+   .footer-Home {
+    height: 100px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #E4D7F5;
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    text-decoration: none;
+    /* Add padding to create space between content and footer */
+  }
+
+  .wrapper-Appointment {
+
+    /* position: absolute; */
+    width: 137.238px;
+    height: 58.563px;
+    /* top: 1.922px;
+    left: 0; */
+    background: #9b87b3;
+    /* transform: rotate(0.24deg); */
+    z-index: 25;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .button-confirm {
+    position: relative;
+    width: 153px;
+    height: 49px;
+    margin-top: -90px;
+    cursor: pointer;
+    background: #9B87B3;
+    border: none;
+    z-index: 103;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: Itim, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 42px;
+    white-space: nowrap;
+    display: block; 
+    
+
+  }
+
+  .flex-column-d-Home-Confirm{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: auto;
+    position: relative;
+    width: 924px;
+    /* height: 62px; */
+    height: auto;
+    margin: 2px 0 0 4px;
+    padding: 10px 10px 10px 10px;
+    z-index: 3;
+    gap: 50px;
+  }
+  .text-c {
+    display: block;
+    position: relative;
+    height: 60px;
+    margin: 0 0 0 0;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    z-index: 24;
+  }
+  .pic-2 {
+    flex-shrink: 0;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: url(./images/DogProfile.png)
+        no-repeat center;
+    background-size: cover;
+    z-index: 16;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+  .banner-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    z-index: 1000; /* Ensure it's above other content */
+    transition: top 0.3s; /* Smoothly show and hide the banner */
+  }
+  .banner-text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Itim, var(--default-font-family);
+  }
+  .banner-close {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .rectangle-3-doh{
+    position: relative;
+    width: 1120px;
+    height: 380px;
+    margin: 41px 0 0 154px;
+    background: #f7f7f7;
+    border: 1px solid #000000;
+    z-index: 5;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);    
+  }
+  .flex-column-doh{
+    position: absolute;
+    width: 752px;
+    height: 327px;
+    top: 22px;
+    left: 322px;
+    font-size: 0px;
+    z-index: 12;
+
+  }
+
+  .welcome-user{
+    display: block;
+    position: relative;
+    height: 60px;
+    margin: 0 0 0 0;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 10;
+  }
+
+  .rectangle-4-doh{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 752px;
+    height: 248px;
+    margin: 19px 0 0 0;
+    font-size: 0px;
+    background: #f7f7f7;
+    z-index: 12;
+    /* overflow: visible auto; */
+    overflow-y: auto;
+    border-radius: 10px;
+    gap: 5px;
+  }
+
+  .no-appointments-doh {
+    position: absolute;
+    right: 180px;
+    top: 110px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 40px;
+    font-weight: 400;
+  }
+
+  .appointment-entry-doh {
+
+  }
+
+  .today-doh{
+    display: block;
+    position: relative;
+    height: 36px;
+    margin: 13px 0 0 15px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+    z-index: 13;
+  }
+
+  .wrapper-4-doh{
+    display: flex;
+    align-items: center; /* This will vertically center the children */   
+
+  }
+  .ellipse-doh{
+    display: flex;
+    flex-shrink: 0;
+    width: 66px;
+    height: 69px;
+    /* top: 50px;
+    left: 15px; */
+    background: url(./images/DogProfile.png)
+      no-repeat center;
+    background-size: cover;
+    z-index: 14;
+  }
+  .liam-time-doh{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* position: absolute; */
+    height: 36px;
+    /* top: 67px;
+    left: 101px; */
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    margin-left: 10px;
+    z-index: 16;
+  }
+  .upcoming-appointments-doh{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute;
+    width: 291px;
+    height: 96px;
+    top: 151px;
+    left: 9px;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: left;
+    text-overflow: initial;
+    text-transform: uppercase;
+    z-index: 11;
+    overflow: hidden;
+
+  }
+
+  .box-2-confirm {
+    position: relative;
+    width: 1120px;
+    height: 285px;
+    /* margin: 451px 0 0 152px; */
+    margin-top: 900px;
+    font-size: 0px;
+    background: #f7f7f7;
+    border: 1px solid #000000;
+    z-index: 10;
+    overflow: visible auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  }
+  .text-6-confirm {
+    display: block;
+    position: relative;
+    height: 60px;
+    margin: 21px 0 0 12px;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    z-index: 11;
+
+  }
+  .box-3-confirm{
+    display: flex; /* Use flex layout */
+    align-items: center; /* Align items vertically in the center */
+    justify-content: flex-start; /* Align items to the start of the container */
+    gap: 50px; /* Add some gap between the buttons */
+
+    position: relative;
+    width: 799px;
+    height: 60.485px;
+    margin: 33px 0 0 162px;
+    z-index: 32;
+
+  }
+  .wrapper-confirm{
+    /* position: absolute; */
+    width: 137.238px;
+    height: 58.563px;
+    /* top: 1.922px;
+    left: 0; */
+    background: #9b87b3;
+    /* transform: rotate(0.24deg); */
+    z-index: 25;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+
+  }
+
+  .selected-confirm{
+    background-color: #2f2e2e3a; /* or any highlight color */
+    border: 2px solid #666; /* or any style to indicate selection */
+  /* Additional styles for selected state */
+  }
+  .else-confirm{
+    color: #5a5a5a;
+    height: 42px;
+    font-family: Itim, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+  }
+
+  .img-1-confirm{
+    position: absolute;
+    width: 1120px;
+    height: 285px;
+    top: 50%;
+    left: 50%;
+    background: #f7f7f7;
+    border: 1px solid #000000;
+    background-size: cover;
+    transform: translate(-50.04%, -125.96%);
+    z-index: 2;
+    border-radius: 10px;
+
+  }
+  .group-4-confirm{
+    position: absolute;
+    width: 928px;
+    height: 271px;
+    top: 10px;
+    left: 9px;
+    font-size: 0px;
+    z-index: 24;
+  }
+
+  .text-c-confirm{
+    display: block;
+    position: relative;
+    height: 60px;
+    margin: 0 0 0 0;
+    color: #343a40;
+    font-family: Itim, var(--default-font-family);
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 60px;
+    text-align: left;
+    text-transform: capitalize;
+    white-space: nowrap;
+    z-index: 24;
+  }
+  .box-4-confirm{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-x: auto;
+    position: relative;
+    width: 924px;
+    /* height: 62px; */
+    height: auto;
+    margin: 2px 0 0 4px;
+    padding: 10px 10px 10px 10px;
+    z-index: 3;
+    gap: 50px;
+  }
+  .pic-2-confirm{
+    flex-shrink: 0;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background: url(./images/DogProfile.png)
+        no-repeat center;
+    background-size: cover;
+    z-index: 16;
+    border-radius: 50%;
+    margin-bottom: 8px;
+  }
+  .text-d-confirm{
+    flex-shrink: 0;
+    flex-basis: auto;
+    position: relative;
+    height: 42px;
+    color: #5a5a5a;
+    font-family: Itim, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 42px;
+    text-align: center;
+    text-transform: capitalize;
+    white-space: nowrap;
+    z-index: 5;
+
+  }
+  .pic-confirm{
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    top: 92px;
+    left: 980px;
+    background: url(./images/1159101-200.png)
+        no-repeat center;
+    background-size: cover;
+    z-index: 23;
+    margin-top: -10px;
+    border: none;
+    cursor: pointer;
+
+  }
+  .button-confirm{
+    position: relative;
+    width: 153px;
+    height: 49px;
+    margin-top: -250px;
+    cursor: pointer;
+    background: #9B87B3;
+    border: none;
+    z-index: 103;
+    border-radius: 10px;
+    color: #FFFFFF;
+    font-family: Itim, var(--default-font-family);
+    font-size: 35px;
+    font-weight: 400;
+    line-height: 42px;
+    white-space: nowrap;
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+
+  }
