@@ -1,13 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../routes/Request.css';
 import TopSection from '../components/TopSection'; // Adjust the path as necessary
+import Sidebar from '../components/Sidebar';
 import Requests from '../components/Requests'; // Adjust the path as necessary
 
 // Main App component that uses the imported components
 const Home = () => {
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
+
   return (
-    <div className="app-background">
-      <TopSection />
+    <div>
+      <TopSection OpenSidebar={OpenSidebar}/>
+      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <Requests />
       {/* other components or content */}
     </div>

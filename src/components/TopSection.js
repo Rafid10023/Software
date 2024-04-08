@@ -1,50 +1,21 @@
-import { useState } from "react";
-import MenuExpandIcon from '../icons/MenuExpand.png';
-import UserIcon from '../icons/userIcon.png';
-import "../components/TopSection.css";
-import Sidebar from "../components/Sidebar.js";
-import { CSSTransition } from "react-transition-group";
+import React from 'react'
+import 
+ {BsPerson, BsJustify}
+ from 'react-icons/bs'
 
-const TopSection = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-    const handleLabelClick = () => {
-      setIsSidebarOpen(!isSidebarOpen);
-    };
+function TopSection({OpenSidebar}) {
   return (
-      <>
-        <div className="leftSection">
-          {/* Additional JSX added here */}
-          <div className={`top ${isSidebarOpen ? "top-sidebar-open" : ""}`}>
-            <div className="menu">
-              <input type="checkbox" name="checkbox" id="check" />
-              <label htmlFor="check" onClick={handleLabelClick}>
-                <img src={MenuExpandIcon} alt="Menu Expand" className="menuIcon" />
-              </label>
-            </div>
-          </div>
-          {/* End of additional JSX */}
-          <span className="welcomeText">Welcome Back, JJ!</span>
-          <div className="userInfo">
-            <span className="userName">Jai Joshi</span>
-            <img src={UserIcon} alt="User Icon" className="userIcon" />
-            <div class="dropdown-content" id="dropdownContent">
-              <a href="#" onclick="signOut()">Sign Out</a>
-            </div>
-          </div>
+    <header className='header'>
+        <div className='menu-icon'>
+            <BsJustify className='icon' onClick={OpenSidebar}/>
+            <p>Welcome Back, JJ!</p>
         </div>
-  
-        {/* Sidebar Transition */}
-        <CSSTransition
-          in={isSidebarOpen}
-          timeout={500}
-          classNames="sidebar"
-          unmountOnExit
-        >
-          <Sidebar />
-        </CSSTransition>
-      </>
-    );
-  };
+        <div className='header-right'>
+        <span className='username'>Jai Joshi</span>
+            <BsPerson className='icon'/>
+        </div>
+    </header>
+  )
+}
 
-export default TopSection;
+export default TopSection

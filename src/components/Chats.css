@@ -1,19 +1,36 @@
 .chat-container {
-    display: flex;
-    height: 100vh;
+  display: grid;
+  grid-template-columns: 260px 1fr 1fr 1fr;
+  grid-template-rows: 0.2fr 3fr;
+  grid-template-areas:
+    'sidebar header header header'
+    'sidebar main main main';
+  height: 100vh;
+  background-color: #f5f4ef;
+  justify-content: center;
+  width: 100%;
+  }
+
+  .chat-content {
+    grid-column: 2 / -1;
+    grid-row: 2 / -1; 
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
   }
   
   .chat-list {
-    width: 30%;
     background-color: #f4f4f8;
     padding: 20px;
   }
   
   .chat-search input {
-    width: 100%;
+    width: calc(100% - 20px); 
     padding: 10px;
     margin-bottom: 20px;
     margin-left:-9px;
+    border-radius: 10px;
+    border: none;
   }
   
   .chat-user {
@@ -78,4 +95,9 @@
     padding: 10px 15px;
     border-radius: 20px;
     max-width: 60%;
+  }
+
+  .top-section {
+    grid-column: 1 / -1;
+  grid-row: 1; 
   }

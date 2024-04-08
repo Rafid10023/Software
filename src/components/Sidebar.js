@@ -1,50 +1,41 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link component
+import { Link } from 'react-router-dom';
 import '../components/SideBar.css';
-import dashboardIcon from '../icons/Dashboard.png';
-import userManagementIcon from '../icons/user.png';
-import ratingsIcon from '../icons/email_send.png';
-import remindersIcon from '../icons/notification_active.png';
-import settingsIcon from '../icons/Settings.png';
-import chatIcon from '../icons/chat.png';
-import requestsIcon from '../icons/Requests.png';
+import 
+{BsGrid1X2Fill, BsFillEnvelopeFill, BsPeopleFill,
+  BsClipboard2CheckFill, BsChatLeftQuoteFill, BsFillBellFill, BsFillGearFill}
+ from 'react-icons/bs';
 
-const Sidebar = () => {
+ function Sidebar({openSidebarToggle, OpenSidebar}) {
   return (
-    <div className="sidebar">
-      <div className="menuItems">
-        {/* Use Link components with 'to' attribute for navigation */}
-        <Link to="/" className="menuItem">
-          <img src={dashboardIcon} alt="Dashboard" className="icon" />
-          <span>Dashboard</span>
-        </Link>
-        <Link to="/user-management" className="menuItem">
-          <img src={userManagementIcon} alt="User Management" className="icon" />
-          <span>User Management</span>
-        </Link>
-        <Link to="/ratings-reviews" className="menuItem">
-          <img src={ratingsIcon} alt="Ratings & Reviews" className="icon" />
-          <span>Ratings & Reviews</span>
-        </Link>
-        <Link to="/reminders" className="menuItem">
-          <img src={remindersIcon} alt="Reminders" className="icon" />
-          <span>Reminders</span>
-        </Link>
-        <Link to="/settings" className="menuItem">
-          <img src={settingsIcon} alt="Settings" className="icon" />
-          <span>Settings</span>
-        </Link>
-        <Link to="/Chat" className="menuItem">
-          <img src={chatIcon} alt="Chat" className="icon" />
-          <span>Chat</span>
-        </Link>
-        <Link to="/Requests" className="menuItem">
-          <img src={requestsIcon} alt="Requests" className="icon" />
-          <span>Requests</span>
-        </Link>
-      </div>
-      {/* Rest of the sidebar content */}
-    </div>
+    <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
+    <ul className='sidebar-list'>
+      <li className="sidebar-list-item">
+        <Link to="/" className="menuItem"><BsGrid1X2Fill className='icon'/> Dashboard</Link>
+      </li>
+      <li className='sidebar-list-item'>
+        <Link to='/user-management'><BsPeopleFill className='icon'/> User Management </Link>
+      </li>
+      <li className='sidebar-list-item'>
+        <Link to='/ratings-reviews'><BsFillEnvelopeFill className='icon'/> Ratings & Reviews</Link>
+      </li>
+      <li className='sidebar-list-item'>
+        <Link to='/reminders'><BsFillBellFill className='icon'/> Reminders</Link>
+      </li>
+      <li className='sidebar-list-item'>
+        <Link to="/settings"><BsFillGearFill className='icon'/> Settings</Link>
+      </li>   
+      <li className='sidebar-list-item'>
+        <Link to="/Chat"><BsChatLeftQuoteFill className='icon'/> Chat</Link>
+      </li> 
+      <li className='sidebar-list-item'>
+        <Link to="/Requests"><BsClipboard2CheckFill className='icon'/> Requests</Link>
+      </li>
+      <li className='sidebar-list-item'>
+        <Link to='/login'>Logout</Link>
+      </li> 
+    </ul>
+    </aside>
   );
 };
 
