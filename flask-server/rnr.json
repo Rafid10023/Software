@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "name": "Stephanie Rodriguez",
+        "rating": 4,
+        "review": "Service was amazing, very happy with...",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 2,
+        "name": "Benjamin Patel",
+        "rating": 5,
+        "review": "Excellent service!",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 3,
+        "name": "Jacob Russo",
+        "rating": 3,
+        "review": "Not terrible but not amazing, walker ar...",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 4,
+        "name": "Alexander Khan",
+        "rating": 5,
+        "review": "Service was amazing, very happy with...",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 5,
+        "name": "Olivia Jensen",
+        "rating": 2,
+        "review": "Very disappointed! Absolutely shocked...",
+        "date": "05/03/2023"
+    },
+    {
+        "id": 6,
+        "name": "Ethan Li",
+        "rating": 5,
+        "review": " ",
+        "date": "07/03/2023"
+    }
+]
