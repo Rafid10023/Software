@@ -9,6 +9,7 @@ import SystemAdmin from "./SystemAdmin/SystemAdmin";
 import UserManagement from "./SystemAdmin/UserManagement";
 import RnR from "./SystemAdmin/RnR";
 import Reminders from "./SystemAdmin/Reminders";
+import Reports from "./SystemAdmin/Reports";
 import Settings from "./SystemAdmin/Settings";
 import LoginAdmin from "./LoginPages/login";
 
@@ -25,7 +26,8 @@ const App = () => {
           <Route path="/user-management" element={<UserManagement />} />{" "}
           <Route path="/rnr" element={<RnR />} />{" "}
           <Route path="/reminders" element={<Reminders />} />{" "}
-          <Route path="/settings" element={<Settings />} />{" "}
+          <Route path="/reminders" element={<Reminders />} />{" "}
+          <Route path="/reports" element={<Reports />} />{" "}
           {/* Use ContactPage component for /contact route */}
         </Routes>
       </Router>
