@@ -59,7 +59,12 @@
   }
   
   .menu-icon {
-    display: inline;
+    display: flex;
+    align-items: center;
+  }
+  
+  .username {
+    margin-right: 15px;
   }
   /* END OF HEADER  */
   
@@ -243,7 +248,7 @@
 
 /* END OF SETTINGS */
 
-/* REMINDERS */
+/* REMINDERS + RnR */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -262,16 +267,19 @@ h1 {
 table {
   width: 100%;
   border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 th, td {
   padding: 12px 15px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
 th {
   background-color: white;
+  border-bottom: 1px solid #000; 
 }
 
 .searchbar {
@@ -285,10 +293,6 @@ th {
   border: none;
 }
 
-tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
 button {
   padding: 8px 12px;
   border: none;
@@ -300,6 +304,10 @@ button {
 
 button:hover {
   background-color: #704881;
+}
+
+.filter {
+  padding: 10px;
 }
 
   /* Medium <= 992px */
@@ -318,7 +326,7 @@ button:hover {
     }
   
     .menu-icon {
-      display: inline;
+      display: flex;
     }
   
     .sidebar-title > span {
@@ -332,13 +340,5 @@ button:hover {
       grid-template-columns: 1fr;
       gap: 10px;
       margin-bottom: 0;
-    }
-  }
-  
-  /* Extra Small <= 576px */
-  
-  @media screen and (max-width: 576px) {
-    .hedaer-left {
-      display: none;
     }
   }

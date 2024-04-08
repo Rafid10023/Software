@@ -1,44 +1,58 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './Header.js';
 import Sidebar from './Sidebar.js';
 import './style.css'; 
 import { BsSearch } from "react-icons/bs";
 
-const UserManagement = () => {
-  // Sample data for demonstration
-  const [users, setUsers] = useState([
-    { id: 1, name: 'Stephanie Rodriguez', type: 'Owner', userSince: '02/03/2024' },
-    { id: 2, name: 'Benjamin Patel', type: 'Owner', userSince: '02/03/2024' },
-    { id: 3, name: 'Jacob Russo', type: 'Walker', userSince: '03/03/2024' },
-    { id: 4, name: 'Alexander Khan', type: 'Owner', userSince: '03/03/2024' },
-    { id: 5, name: 'Olivia Jensen', type: 'Walker', userSince: '05/03/2024' },
-    { id: 6, name: 'Ethan Li', type: 'Walker', userSince: '07/03/2024' },
-    { id: 7, name: 'Madison Kim', type: 'Walker', userSince: '09/03/2024' },
-    { id: 8, name: 'Daniel Smith', type: 'Owner', userSince: '10/03/2024' },
-    { id: 9, name: 'Ava Sullivan', type: 'Walker', userSince: '15/03/2024' },
-    { id: 10, name: 'William Hernandez', type: 'Owner', userSince: '15/03/2024' },
-    { id: 11, name: 'Emma Williams', type: 'Owner', userSince: '15/03/2024' },
-    { id: 12, name: 'Grace Murphy', type: 'Walker', userSince: '17/03/2024' },
-    { id: 13, name: 'Matthew Thompson', type: 'Owner', userSince: '19/03/2024' },
-    { id: 14, name: 'Isabella Martinez', type: 'Walker', userSince: '20/03/2024' },
-  ]);
+// Rest of the code remains the same...
 
+const UserManagement = () => {
+  const [users, setUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
+  const [openSidebarToggle, setOpenSidebarToggle] = useState(false);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/accepted")
+      .then(res => res.json())
+      .then(users => {
+        setUsers(users);
+        console.log(users);
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
   // Function to filter users based on search query
   const filteredUsers = users.filter(user =>
     user.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
-
   const OpenSidebar = () => {
-    setOpenSidebarToggle(!openSidebarToggle)
-  }
+    setOpenSidebarToggle(!openSidebarToggle);
+  };
+
+const deleteUser = (userId) => {
+    const confirmed = window.confirm("Are you sure you want to delete this user?");
+    if (confirmed) {
+      fetch(`http://localhost:5000/delete/${userId}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data.message); // Log success message
+        // Remove the deleted user from the users state
+        setUsers(prevUsers => prevUsers.filter(user => user.id !== userId));
+      })
+      .catch(error => {
+        console.error('Error deleting user:', error);
+      });
+    }
+  };
 
   return (
-    <div className="sys-container"> {/* Apply container class */}
-    <Header OpenSidebar={OpenSidebar}/>
+    <div className="sys-container">
+      <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
       <h1>USER MANAGEMENT</h1>
       <input
@@ -48,24 +62,28 @@ const UserManagement = () => {
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <table>
-        <thead>
-          <tr>
-            <th>User Name</th>
-            <th>User Type</th>
-            <th>User Since</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredUsers.map(user => (
-            <tr key={user.id}>
-              <td>{user.name}</td>
-              <td>{user.type}</td>
-              <td>{user.userSince}</td>
+      {users.length > 0 && (
+        <table>
+          <thead>
+            <tr>
+              <th>User Name</th>
+              <th>User Type</th>
+              <th>User Since</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredUsers.map(user => (
+              <tr key={user.id}>
+                <td>{user.name}</td>
+                <td>{user.type}</td>
+                <td>{user.date}</td>
+                <td>{user.id && <button onClick={() => deleteUser(user.id)}>Remove User</button>}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };

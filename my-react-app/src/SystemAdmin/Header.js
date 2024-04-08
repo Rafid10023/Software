@@ -1,6 +1,6 @@
 import React from 'react'
 import 
- {BsPersonCircle, BsJustify}
+ {BsPerson, BsJustify}
  from 'react-icons/bs'
 
 function Header({OpenSidebar}) {
@@ -8,12 +8,11 @@ function Header({OpenSidebar}) {
     <header className='header'>
         <div className='menu-icon'>
             <BsJustify className='icon' onClick={OpenSidebar}/>
-        </div>
-        <div className='header-left'>
             <p>Welcome Back Meldy!</p>
         </div>
         <div className='header-right'>
-            <BsPersonCircle className='icon'/>
+        <span className='username'>Meldy Asili Bile</span>
+            <BsPerson className='icon'/>
         </div>
     </header>
   )

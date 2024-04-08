@@ -4,7 +4,7 @@ import { useState } from "react";
 import "./style.css";
 import Header from "./Header";
 import 
-{ BsFillArchiveFill, BsChatLeftQuoteFill, BsCheckCircleFill, BsDatabaseAdd, BsGraphUpArrow}
+{ BsPeopleFill, BsChatLeftQuoteFill, BsCheckCircleFill, BsDatabaseAdd, BsGraphUpArrow}
  from 'react-icons/bs'
 
 function SystemAdmin () {
@@ -27,7 +27,7 @@ function SystemAdmin () {
             <div className='card'>
                 <div className='card-inner'>
                     <h3>Total Users</h3>
-                    <BsFillArchiveFill className='card_icon'/>
+                    <BsPeopleFill className='card_icon'/>
                 </div>
                 <h1>17,000</h1>
             </div>

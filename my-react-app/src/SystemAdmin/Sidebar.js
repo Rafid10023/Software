@@ -1,21 +1,14 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import 
-{BsGrid1X2Fill, BsFillEnvelopeFill, BsPersonCircle, BsPeopleFill,
-    BsFillBellFill, BsFillGearFill}
+{BsGrid1X2Fill, BsFillEnvelopeFill, BsPeopleFill,
+    BsFillBellFill, BsBarChartFill, BsFillGearFill}
  from 'react-icons/bs';
-
 import './style.css';
 
 function Sidebar({openSidebarToggle, OpenSidebar}) {
   return (
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
-        <div className='sidebar-title'>
-            <div className='sidebar-brand'>
-                <BsPersonCircle  className='icon_header'/> System Admin
-            </div>
-            <span className='icon close_icon' onClick={OpenSidebar}>X</span>
-        </div>
 
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
@@ -29,6 +22,9 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
             </li>
             <li className='sidebar-list-item'>
                 <Link to='/reminders'><BsFillBellFill className='icon'/> Reminders</Link>
+            </li>
+            <li className='sidebar-list-item'>
+                <Link to='/reports'><BsBarChartFill className='icon'/> Reports </Link>
             </li>
             <li className='sidebar-list-item'>
                 <Link to='/settings'><BsFillGearFill className='icon'/> Settings</Link>
