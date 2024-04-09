@@ -1,0 +1,48 @@
+/* HeroSection.css */
+
+.hero-section {
+    background-image: url('./images/scrollimage1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    color: black;
+}
+
+.hero-content h1 {
+    font-size: 3vw; /* Adjust font size based on viewport width */
+    margin-bottom: 2vw; /* Adjust margin based on viewport width */
+    background-color: rgba(228, 215, 245, 0.75);
+    border-radius: 3vw; /* Adjust border radius based on viewport width */
+    padding: 1.5vw; /* Adjust padding based on viewport width */
+}
+
+.hero-content p {
+    font-size: 1.5vw; /* Adjust font size based on viewport width */
+    margin-bottom: 4vw; /* Adjust margin based on viewport width */
+    background-color: rgba(228, 215, 245, 0.75);
+    border-radius: 3vw; /* Adjust border radius based on viewport width */
+    padding: 0.5vw; /* Adjust padding based on viewport width */
+    width: auto; /* Adjust width */
+    margin-left: 10vw; /* Adjust margin based on viewport width */
+}
+
+.cta-button {
+    padding: 1vw 2vw; /* Adjust padding based on viewport width */
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    font-size: 1.2vw; /* Adjust font size based on viewport width */
+    cursor: pointer;
+    border-radius: 1vw; /* Adjust border radius based on viewport width */
+}
+
+.cta-button:hover {
+    background-color: #45a049; /* Darker green */
+}

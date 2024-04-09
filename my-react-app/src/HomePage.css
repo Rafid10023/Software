@@ -1,0 +1,143 @@
+.wrap {
+    background-color: #F5F4EF;
+    padding: 2%; 
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E4D7F5;
+    color: #343A40;
+    padding: 2%; 
+    text-align: center;
+}
+
+.banner h1 {
+    width: 70%; 
+}
+
+.banner button {
+    width: 20%; 
+    background-color: #E4D7F5;
+    color: #343A40;
+    border: none;
+    font-size: 2vw; 
+    padding: 1vw 2vw; 
+}
+
+.login {
+    width: 20%; 
+    background-color: #E4D7F5;
+    color: #343A40;
+    border: none;
+    font-size: 2vw; 
+    padding: 1vw 2vw; 
+}
+
+.banner button:active,
+.banner button:focus {
+    border: 0.2vw groove;
+    background-color: #7D3F98;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%; 
+}
+
+.text-box {
+    flex: 1;
+    border: 0.1vw solid #ccc; 
+    padding: 2%; 
+    margin-right: 2%; 
+}
+
+.image-box {
+    flex: 1;
+    border: 0.1vw solid #ccc; 
+    padding: 2%; 
+    background-image: url('./images/bottomdogimage.jpg');
+    background-size: cover;
+    height: 30vh; 
+    min-width: 15vw; 
+}
+
+.vertical-text-box {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-left: 2%; 
+}
+
+.vertical-text {
+    border: 0.1vw solid #ccc; 
+    padding: 2%; 
+}
+
+/* Icon Row Styles */
+.icon-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2%; 
+    margin-bottom: 2%; 
+    padding: 2%; 
+    font-size: 2vw; 
+    color: #333; 
+}
+
+.icon-container {
+    width: calc(25% - 0.5vw); 
+}
+
+.icon {
+    width: 10vw; 
+    height: 10vw; 
+    border: 0.1vw solid #343A40; 
+    border-radius: 50%;
+}
+
+#icon1 {
+    background-size: contain;
+    background-image: url('./images/mapicon.png');
+}
+
+#icon2 {
+    background-size: contain;
+    background-image: url('./images/listicon.png');
+}
+
+#icon3 {
+    background-size: contain;
+    background-image: url('./images/messageicon.jpg');
+}
+
+#icon4 {
+    background-size: contain;
+    background-image: url('./images/clockicon.png');
+}
+
+.text-box {
+    margin-left: 2%;
+    margin-bottom: 0; 
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5vw;
+}
+
+.contact-info h2 {
+    margin-bottom: 0.5vw; 
+    margin-right: 2%; 
+}
+
+.contact-info p {
+    margin-top: 2%; 
+    margin-bottom: 0.5vw; 
+    margin-right: 2%;
+}
