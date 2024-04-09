@@ -2,7 +2,7 @@ import React from 'react';
 import './HomePageWalker.css';
 import { Link, useNavigate } from 'react-router-dom';
 
-function HistoryWalker() {
+function ProfileWalker() {
     const navigate = useNavigate();
     
     const handleLogout = () => {
@@ -19,20 +19,20 @@ function HistoryWalker() {
             <span className='happy-hounds-Home'>HappyHounds</span>
         </div>
         <div className='frame-1-Home'>
-          <Link to="/" className='home-Home'>Home</Link>
+          <Link to="/dogwalkerhome" className='home-Home'>Home</Link>
           <Link to="/chatWalker" className='chat-Home'>Chat</Link>
           <Link to="/appointmentWalker" className='appointment-Home'>Appointment</Link>
-          <Link to="/historyWalker" className='history-Home'>History</Link>             
-          <Link to="/profileWalker" className='profile-Home'>Profile</Link>
+          <Link to="/historyWalker" className='history-Home'>History</Link>    
+          <Link to="/profileWalker" className='profile-Home'>Profile</Link>        
           <button className='logout-Home' onClick={handleLogout}>Logout</button>
         </div>
       </div>
 
       <div className='main-container-Home'>
         
-        {/* <div className='vertical-container-Home'>
+        <div className='vertical-container-Home'>
 
-          <div className='vertical-rectangle-1-Home'>
+          {/* <div className='vertical-rectangle-1-Home'>
 
             <div className='flex-column-d-Home'>
               <span className='welcome-Name-Home'>Welcome Ji Won</span>
@@ -51,48 +51,29 @@ function HistoryWalker() {
               appointments
             </span>
 
-          </div>
+          </div> */}
           
           <div className='vertical-rectangle-2-Home'>
             <div className='task-details-Home'>
-            1: Follow a Specific Route
-            <br />
-            2: Feeding Instructions
-            <br />
-            3: Medication Administration
-            <br />
-            4: Update on Dog's Behaviour
-            <br />
-            5: Reinforce Training Commands <br />
-            6: Apply Treatments
-            <br />
-            7: Watch for Health Issues
-            <br />
-            8: Avoid Specific Areas or Dogs
+           
             </div>
             <div className='flex-column-ae-Home'>
-              <span className='tasks-Home'>Tasks</span>
+              <span className='tasks-Home'>Profile</span>
               <button className='task-button-Home'>
-                <span className='add-task-Home'>Add task</span>
+                <span className='add-task-Home'>Change</span>
               </button>
             </div>       
 
           </div>      
-        </div> */}
+        </div>
 
-        <div className='horizontal-container-Home'>
+        {/* <div className='horizontal-container-Home'>
           <div className='horizontal-rectangle-1-Home'>
-            <span className='upcoming-appointments-Home'>
-              Payment
-              <br />
-              History
-            </span>
-            
             
           </div>
           <div className='horizontal-rectangle-2-Home'>
           </div>         
-        </div>
+        </div> */}
       </div>
 
       <div className="footer-Home">
@@ -103,4 +84,4 @@ function HistoryWalker() {
   }
   
 
-  export default HistoryWalker;
+  export default ProfileWalker;

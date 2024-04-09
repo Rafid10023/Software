@@ -1,0 +1,104 @@
+{
+    "dog_owners": [
+        {
+            "username": "owner1",
+            "password": "password1",
+            "dogname": "Haru"
+        },
+        {
+            "username": "owner2",
+            "password": "password2",
+            "dogname": "Toto"
+        },
+        {
+            "username": "owner3",
+            "password": "password3",
+            "dogname": "Max"
+        },
+        {
+            "username": "bruh",
+            "password": "hello",
+            "dogname": "Ash"
+        },
+        {
+            "username": "sayed",
+            "password": "bruhbruhbruh",
+            "dogname": "Cooper"
+        },
+        {
+            "username": "asdfasdf",
+            "password": "zxcvaerwfgwe hr wrsgh",
+            "dogname": "Luna"
+        },
+        {
+            "username": "fbndrfg hb",
+            "password": "wed zsdv af",
+            "dogname": "Milo"
+        },
+        {
+            "username": "abghfj ert h",
+            "password": "wsaerfaw fawef",
+            "dogname": "Leo"
+        },
+        {
+            "username": "rafid",
+            "password": "uddin",
+            "dogname": "Dusty"
+        },
+        {
+            "username": "hassan",
+            "password": "hassan1",
+            "dogname": "Alfie"
+        }
+    ],
+    "dog_walkers": [
+        {
+            "username": "bob",
+            "password": "bob"
+        },
+        {
+            "username": "emily",
+            "password": "emily"
+        },
+        {
+            "username": "john",
+            "password": "john"
+        },
+        {
+            "username": "rafay",
+            "password": "rafay"
+        },
+        {
+            "username": "abdullah",
+            "password": "abdullah"
+        }
+    ],
+    "system_admins": [
+        {
+            "username": "admin1",
+            "password": "password1"
+        },
+        {
+            "username": "admin2",
+            "password": "password2"
+        },
+        {
+            "username": "admin3",
+            "password": "password3"
+        }
+    ],
+    "customer_support": [
+        {
+            "username": "support1",
+            "password": "password1"
+        },
+        {
+            "username": "support2",
+            "password": "password2"
+        },
+        {
+            "username": "support3",
+            "password": "password3"
+        }
+    ]
+}

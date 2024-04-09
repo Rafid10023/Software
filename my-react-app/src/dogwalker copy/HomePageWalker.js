@@ -1,61 +1,72 @@
 import React, { useEffect, useState} from 'react';
 import './HomePageWalker.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../LoginPages/AuthContext';
 
 function HomePageWalker() {
-    const navigate = useNavigate();
-    
+
     const handleLogout = () => {
-      console.log('Logging out...')
+      logout();
       navigate('/');
     }
 
     const [upcomingAppointments, setUpcomingAppointments] = useState([]);
     const [pastAppointments, setPastAppointments] = useState([]);
     const [currentAppointment, setCurrentAppointment] = useState(null);
+    const { user, logout } = useAuth();
+    let navigate = useNavigate();
 
     useEffect(() => {
-      fetch('http://127.0.0.1:5000/appointments')
-        .then(response => response.json())
-        .then(appointments => {
-          const now = new Date();
-          const newUpcoming = [];
-          const newPast = [];
+      if (user && user.username) {
+        fetch(`http://127.0.0.1:5000/appointmentsWalker?walkerUsername=${user.username}`)
+          .then(response => response.json())
+          .then(appointments => {
+            const now = new Date();
+            const newUpcoming = [];
+            const newPast = [];
 
-          appointments.forEach(appt => {
-              const appointmentDate = new Date(appt.date);
-              const [startHour, endHour] =appt.time.split('-').map(Number);
-              if (appointmentDate.setHours(endHour, 0, 0, 0) < now) {
-                newPast.push(appt);
-              } else if (appointmentDate.setHours(startHour, 0, 0, 0) <= now){
-                  setCurrentAppointment(appt);
-              } else {
-                  newUpcoming.push(appt);
-              }
-          });
+            appointments.forEach(appt => {
+                const appointmentDate = new Date(appt.date);
+                const [startHour, endHour] =appt.time.split('-').map(Number);
 
-          newUpcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
-          newPast.sort((a,b) => new Date(b.date) - new Date(a.date));
+                const appointmentEndDate = new Date(appointmentDate);
+                appointmentEndDate.setHours(endHour, 0, 0, 0);
 
-          setUpcomingAppointments(newUpcoming);
-          setPastAppointments(newPast);
-        })
-        .catch(error => console.error('Error:', error));
+                const appointmentStartDate = new Date(appointmentDate);
+                appointmentStartDate.setHours(startHour, 0, 0, 0);
 
+                if (appointmentEndDate < now) {
+                  newPast.push(appt);
+                } else if (appointmentStartDate <= now && now <= appointmentEndDate){
+                    setCurrentAppointment(appt);
+                } else {
+                    newUpcoming.push(appt);
+                }
+            });
 
-    }, []);
+            newUpcoming.sort((a, b) => new Date(a.date) - new Date(b.date));
+            newPast.sort((a,b) => new Date(b.date) - new Date(a.date));
+
+            setUpcomingAppointments(newUpcoming);
+            setPastAppointments(newPast);
+          })
+          .catch(error => console.error('Error:', error));
+        }
+
+    }, [user.username]);
 
     
 
 
     return (
     <div>
+
       <div className="header-Home">
         <div className="allTextHeader-Home">
             <span className='happy-hounds-Home'>HappyHounds</span>
         </div>
         <div className='frame-1-Home'>
-          <Link to="/" className='home-Home'>Home</Link>
+          <Link to="/dogwalkerhome" className='home-Home'>Home</Link>
           <Link to="/chatWalker" className='chat-Home'>Chat</Link>
           <Link to="/appointmentWalker" className='appointment-Home'>Appointment</Link>
           <Link to="/historyWalker" className='history-Home'>History</Link>         
@@ -75,7 +86,7 @@ function HomePageWalker() {
         
         <div className='rectangle-3-doh'>
               <div className='flex-column-doh'>
-              <span className='welcome-user'>Welcome Jiwon</span>
+              <span className='welcome-user'>Welcome {user.username}</span>
               <div className='rectangle-4-doh'>
                   {upcomingAppointments.length === 0 ? (
                       <span className='no-appointments-doh'>No appointments to display</span>

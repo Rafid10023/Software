@@ -3,25 +3,27 @@ import './HomePageWalker.css';
 import { Link, useNavigate } from 'react-router-dom';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+import { useAuth } from '../LoginPages/AuthContext';
 
 function AppointmentWalker() {
     const [date, setDate] = React.useState(new Date());
     const navigate = useNavigate();
+    const { logout } = useAuth()
 
     const onChange = (newDate) => {
       setDate(newDate);
-    }
+    };
     const handleConfirm = () => {
       localStorage.setItem('selectedDate', date.toISOString());
-      navigate('/confirm');
+      navigate('/confirmWalker');
     };
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     const handleLogout = () => {
-      console.log('Logging out...')
+      logout();
       navigate('/');
-    }
+    };
 
     return (
     <div>
@@ -30,7 +32,7 @@ function AppointmentWalker() {
             <span className='happy-hounds-Home'>HappyHounds</span>
         </div>
         <div className='frame-1-Home'>
-          <Link to="/" className='home-Home'>Home</Link>
+          <Link to="/dogwalkerhome" className='home-Home'>Home</Link>
           <Link to="/chatWalker" className='chat-Home'>Chat</Link>
           <Link to="/appointmentWalker" className='appointment-Home'>Appointment</Link>
           <Link to="/historyWalker" className='history-Home'>History</Link>          

@@ -19,7 +19,7 @@ function ChatWalker() {
             <span className='happy-hounds-Home'>HappyHounds</span>
         </div>
         <div className='frame-1-Home'>
-          <Link to="/" className='home-Home'>Home</Link>
+          <Link to="/dogwalkerhome" className='home-Home'>Home</Link>
           <Link to="/chatWalker" className='chat-Home'>Chat</Link>
           <Link to="/appointmentWalker" className='appointment-Home'>Appointment</Link>
           <Link to="/historyWalker" className='history-Home'>History</Link>                 

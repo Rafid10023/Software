@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HomePageWalker.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import { useAuth } from '../LoginPages/AuthContext';
 
 
 const ConfirmPage = () => {
@@ -10,9 +11,10 @@ const ConfirmPage = () => {
   const [selectedDog, setSelectedDog] = useState(null);
   const [dogs, setDogs] = useState([]);
   const navigate = useNavigate();
+  const { logout, user } = useAuth();
   
   const handleLogout = () => {
-    console.log('Logging out...')
+    logout();
     navigate('/');
   }
 
@@ -50,16 +52,18 @@ const ConfirmPage = () => {
     }
 
     const confirmAppointment = () => {
-      if (selectedTime && selectedDog) {
+      if (selectedTime && selectedDog && user.username) {
         const appointment = {
           id: generateUniqueID(),
           date: selectedDate.toISOString(),
           time: selectedTime,
           dog: selectedDog,
           rating: 0,
+          walkerUsername: user.username
+
         };
 
-        fetch('http://127.0.0.1:5000/appointments', {
+        fetch('http://127.0.0.1:5000/appointmentsWalker', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -74,7 +78,7 @@ const ConfirmPage = () => {
         })
         .then(data => {
           console.log('Booking Request saved:', data);
-          navigate('/');
+          navigate('/dogwalkerhome');
         })
         .catch(error => {
           console.error('There has been a problem with your fetch operation:', error);
@@ -107,7 +111,7 @@ const ConfirmPage = () => {
           <span className='happy-hounds-Home'>HappyHounds</span>
       </div>
       <div className='frame-1-Home'>
-        <Link to="/" className='home-Home'>Home</Link>
+        <Link to="/dogwalkerhome" className='home-Home'>Home</Link>
         <Link to="/chatWalker" className='chat-Home'>Chat</Link>
         <Link to="/appointmentWalker" className='appointment-Home'>Appointment</Link>
         <Link to="/historyWalker" className='history-Home'>History</Link>              
@@ -138,7 +142,7 @@ const ConfirmPage = () => {
 
         </div>
 
-        <button onClick={confirmAppointment} className="button-confirm">Confirm</button>
+        
 
         {/* <div className='vertical-rectangle-1-Home'>
           <span className='text-c'>Choose your Dog</span>
@@ -212,6 +216,7 @@ const ConfirmPage = () => {
             ) : (
               <span className="else-confirm">No times available for the selected date.</span>
           )}
+          <button onClick={confirmAppointment} className="button-confirm-button">Confirm</button>
           </div>  
         </div>
 
