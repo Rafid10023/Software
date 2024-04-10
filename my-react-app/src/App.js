@@ -19,7 +19,12 @@ import Chat from "./dogowner copy/chat";
 import Home from "./dogowner copy/home";
 import ConfirmPage from "./dogowner copy/ConfirmPage";
 
-
+import SystemAdmin from "./SystemAdmin/SystemAdmin";
+import UserManagement from "./SystemAdmin/UserManagement";
+import RnR from "./SystemAdmin/RnR";
+import Reminders from "./SystemAdmin/Reminders";
+import Reports from "./SystemAdmin/Reports";
+import Settings from "./SystemAdmin/Settings";
 
 
 import { AuthProvider } from './LoginPages/AuthContext';
@@ -48,6 +53,13 @@ const App = () => {
           <Route path="/chat" element={<Chat />} />
           <Route path="/dogownerhome" element={<Home/>} />
           <Route path="/confirm" element={<ConfirmPage/>}/>
+
+          <Route path="/system-admin" element={<SystemAdmin />} />{" "}
+          <Route path="/user-management" element={<UserManagement />} />{" "}
+          <Route path="/rnr" element={<RnR />} />{" "}
+          <Route path="/reminders" element={<Reminders />} />{" "}
+          <Route path="/settings" element={<Settings />} />{" "}
+          <Route path="/reports" element={<Reports />} />{" "}
         </Routes>
         </AuthProvider>
       </Router>
