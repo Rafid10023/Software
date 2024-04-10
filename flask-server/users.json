@@ -65,6 +65,10 @@
     ],
     "system_admins": [
         {
+            "username": "admin",
+            "password": "pwd"
+        },
+        {
             "username": "admin1",
             "password": "password1"
         },

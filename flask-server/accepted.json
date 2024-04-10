@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1,
+        "name": "Stephanie Rodriguez",
+        "type": "Owner",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 2,
+        "name": "Benjamin Patel",
+        "type": "Owner",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 3,
+        "name": "Jacob Russo",
+        "type": "Walker",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 4,
+        "name": "Alexander Khan",
+        "type": "Owner",
+        "date": "02/03/2023"
+    },
+    {
+        "id": 5,
+        "name": "Olivia Jensen",
+        "type": "Walker",
+        "date": "05/03/2023"
+    },
+    {
+        "id": 6,
+        "name": "Ethan Li",
+        "type": "Walker",
+        "date": "07/03/2023"
+    },
+    {
+        "id": 7,
+        "name": "Madison Kim",
+        "type": "Walker",
+        "date": "09/03/2023"
+    },
+    {
+        "id": 8,
+        "name": "Daniel Smith",
+        "type": "Owner",
+        "date": "10/03/2023"
+    },
+    {
+        "id": 9,
+        "name": "Ava Sullivan",
+        "type": "Walker",
+        "date": "15/03/2023"
+    },
+    {
+        "id": 10,
+        "name": "William Hernandez",
+        "type": "Owner",
+        "date": "15/03/2023"
+    },
+    {
+        "id": 11,
+        "name": "Emma Williams",
+        "type": "Owner",
+        "date": "15/03/2023"
+    },
+    {
+        "id": 12,
+        "name": "Grace Murphy",
+        "type": "Walker",
+        "date": "17/03/2023"
+    },
+    {
+        "id": 13,
+        "name": "Matthew Thompson",
+        "type": "Owner",
+        "date": "19/03/2023"
+    },
+    {
+        "id": 14,
+        "name": "Isabella Martinez",
+        "type": "Walker",
+        "date": "20/03/2023"
+    },
+    {
+        "id": 15,
+        "name": "Nathan Davis",
+        "type": "Walker",
+        "date": "20/03/2023"
+    },
+    {
+        "id": 16,
+        "name": "Matthew Mcconaughey",
+        "type": "Admin"
+    },
+    {
+        "id": 18,
+        "name": "Emma Thompson",
+        "date": "06/04/24"
+    },
+    {
+        "id": 19,
+        "name": "Maria Kvitova",
+        "date": "06/04/24"
+    }
+]

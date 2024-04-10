@@ -255,6 +255,105 @@ def add_user_task(username):
     write_tasks(tasks)
     return jsonify(new_task), 201
 
+# Admin
+POTENTIAL_FILE_PATH = 'potential.json'
+ACCEPTED_FILE_PATH = 'accepted.json'
+
+@app.route("/admin-login", methods=["POST"])
+def adminlogin():
+    data = request.json
+    username = data.get('username')
+    password = data.get('password')
+    role = None
+
+    # Check if the provided credentials match any user in the database
+    for group, users in users_data.items():
+        if group == 'system_admins':
+            for user in users:
+                if user['username'] == username and user['password'] == password:
+                    role = group
+                    break
+
+    if role == 'system_admins':
+        return jsonify({'message': 'Login successful', 'role': role}), 200
+    else:
+        return jsonify({'error': 'Invalid credentials'}), 401
+
+@app.route('/reviews')
+def get_reviews():
+    try:
+        with open('rnr.json', 'r') as file:
+            reviews_data = json.load(file)
+        return jsonify(reviews_data)
+    except FileNotFoundError:
+        return jsonify({"error": "File not found"})
+    except json.JSONDecodeError:
+        return jsonify({"error": "Error decoding JSON"})
+    
+
+@app.route('/reviews/<int:review_id>', methods=['PUT'])
+def update_review(review_id):
+    try:
+        data = load_json_file('rnr.json')
+        updated_review = request.json
+        for review in data:
+            if review['id'] == review_id:
+                # Update review fields including the rating
+                review['rating'] = updated_review['rating']
+                review['review'] = updated_review['review']  # Update other fields if necessary
+                save_json_file('rnr.json', data)
+                return jsonify({"message": "Review updated successfully"})
+        return jsonify({"error": "Review not found"})
+    except KeyError:
+        return jsonify({"error": "Invalid request body"})
+    except json.JSONDecodeError:
+        return jsonify({"error": "Error decoding JSON"})
+    
+@app.route('/accept', methods=['POST'])
+def accept_request():
+    try:
+        data = load_json_file(POTENTIAL_FILE_PATH)
+        request_name = request.json['name']
+        for item in data:
+            if item['name'] == request_name and item['type'] == user_type:
+                data.remove(item)
+                save_json_file(POTENTIAL_FILE_PATH, data)
+                accepted_data = load_json_file(ACCEPTED_FILE_PATH)
+                # Format the date as DD/MM/YY
+                current_date = datetime.now().strftime("%d/%m/%y")
+                accepted_data.append({"name": request_name, "date": current_date})
+                save_json_file(ACCEPTED_FILE_PATH, accepted_data)
+                return jsonify({"message": "Name accepted and moved to accepted.json"})
+        return jsonify({"error": "Name not found in potential.json"})
+    except KeyError:
+        return jsonify({"error": "Invalid request body"})
+    except json.JSONDecodeError:
+        return jsonify({"error": "Error decoding JSON in potential.json"})
+
+@app.route('/deny', methods=['POST'])
+def deny_request():
+    try:
+        data = load_json_file(POTENTIAL_FILE_PATH)
+        request_name = request.json['name']
+        for item in data:
+            if item['name'] == request_name:
+                data.remove(item)
+                save_json_file(POTENTIAL_FILE_PATH, data)
+                return jsonify({"message": "Name denied and removed from potential.json"})
+        return jsonify({"error": "Name not found in potential.json"})
+    except KeyError:
+        return jsonify({"error": "Invalid request body"})
+    except json.JSONDecodeError:
+        return jsonify({"error": "Error decoding JSON in potential.json"})
+    
+@app.route('/accepted')
+def get_accepted_users():
+    try:
+        data = load_json_file(ACCEPTED_FILE_PATH)
+        return jsonify(data)
+    except json.JSONDecodeError:
+        return jsonify({"error": "Error decoding JSON in accepted.json"})
+
 if __name__ == "__main__":
     app.run(debug=True)
 
