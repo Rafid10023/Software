@@ -1,0 +1,13 @@
+.error-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .error-box a {
+    font-size: 0.8rem;
+    color: white;
+    opacity: 0.8;
+    text-decoration: underline;
+  }

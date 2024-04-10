@@ -1,0 +1,121 @@
+
+/* ContactPage.css */
+@font-face {
+    font-family: 'Itim';
+    src: url('./fonts/Itim-Regular.ttf') format('truetype');
+    /* Add additional font formats (e.g., woff, woff2) as needed */
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.header {
+    height: 100px;
+    background-color: #E4D7F5;
+    width: 100vw;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.allTextHeader {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    /* Add padding to create space between the title and links */
+}
+
+.Title {
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    margin: 0;
+    /* Remove default margin */
+    font-size: 35px;
+    
+
+}
+
+.Home-page,
+.profile,
+.login {
+    text-align: right;
+    /* Align links to the right */
+    margin: 0 10px;
+    justify-content: space-between;
+    text-decoration: none;
+}
+
+
+/* MAIN CONTENT SECTION */
+.main-content1 {
+    display: flex;
+    flex-direction: row;
+    margin: 125px 0 110px;
+    margin-top: 100px;
+    height: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: calc(100vh - 250px);
+    background-color: #F5F4EF;
+    justify-content: center;
+
+    
+}
+
+/* Add a border and padding to the li elements to create a round box */
+.main-content1 ul li {
+    border: 2px solid #E4D7F5;
+    border-radius: 10px; /* Add border-radius to make the border round */
+    padding: 10px; /* Add padding to create space between content and border */
+    margin-bottom: 10px; /* Add margin-bottom to separate each submission */
+    list-style-type: none;
+    background-color: #E4D7F5;
+    width: 50vw;
+
+}
+
+
+
+
+
+/* FOOTER SECTION */
+.footer {
+    height: 100px;
+    width: 100vw;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 20px;
+    background-color: #E4D7F5;
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    text-decoration: none;
+    /* Add padding to create space between content and footer */
+}
+
+.contact {
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+.headerLinks{
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+    
+}
+
+
+.Symbol{
+    padding: 10px;
+}
+
+.TitleMain{
+    font-family: 'Itim', sans-serif; /* Apply Itim font to the body */
+}
+/* Use Flexbox to control layout */
