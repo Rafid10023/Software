@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './LoginPage.css';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './AuthContext'
 
 function LoginDogWalker() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleLogin = async () => {
     const response = await fetch('/login', {
@@ -16,8 +20,10 @@ function LoginDogWalker() {
     const data = await response.json();
     if (response.ok) {
       console.log("Login successful");
+      login(username);
+      navigate("/dogwalkerhome");
     } else {
-      console.log("Login unsuccessful");
+      console.log("Login unsuccessful", data.error);
     }
   }
 

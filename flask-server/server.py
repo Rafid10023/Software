@@ -222,7 +222,98 @@ def get_walkers():
     walker_usernames = [walker['username'] for walker in users_data['dog_walkers']]
     
     return jsonify(walkers=walker_usernames)
+#   ------=Dog walker code=------
 
+APPOINTMENTS_FILE_WALKER = './dogwalker_json/appointments.json'
+
+def read_appointments_walker():
+    try:
+        with open(APPOINTMENTS_FILE_WALKER, 'r') as file:
+            return json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []  # Return an empty list if the file doesn't exist or is empty
+
+def write_appointments_walker(appointments):
+    with open(APPOINTMENTS_FILE_WALKER, 'w') as file:
+        json.dump(appointments, file, indent=4)
+
+
+@app.route('/appointmentsWalker', methods=['GET', 'POST'])
+def handle_appointments_walker():
+    if request.method == 'POST':
+        # Your existing POST logic
+        new_appointment = request.get_json()
+        appointments = read_appointments_walker()
+
+        if not any(app['id'] == new_appointment['id'] for app in appointments):
+            appointments.append(new_appointment)
+            write_appointments_walker(appointments)
+            return jsonify(new_appointment), 201
+        else:
+            return jsonify({"error": "Appointment already exists"}), 409
+
+    elif request.method == 'GET':
+        # Your existing GET logic
+        walker_username = request.args.get('walkerUsername')
+        appointments = read_appointments_walker()
+        
+        if walker_username:
+            filtered_appointments = [app for app in appointments if app.get('walkerUsername') == walker_username]
+            return jsonify(filtered_appointments)
+        else:
+            # If no username is provided, return all appointments
+            # Consider whether you want to keep this functionality
+            return jsonify(appointments)
+
+@app.route('/past-appointmentsWalker')
+def past_appointments_walker():
+    appointments = read_appointments_walker()
+    # Define BST timezone
+    bst = pytz.timezone('Europe/London')
+    
+    now = datetime.now(pytz.utc)  # Get current time in UTC
+    now_bst = now.astimezone(bst)  # Convert current UTC time to BST
+
+    past_apps = []
+    for app in appointments:
+        app_date_utc = datetime.strptime(app['date'], '%Y-%m-%dT%H:%M:%S.%fZ')
+        app_date_utc = pytz.utc.localize(app_date_utc)  # Assume appointment dates are stored in UTC
+        end_hour = int(app['time'].split("-")[1])
+        
+        # Replace with end hour in BST
+        app_end_time_bst = app_date_utc.astimezone(bst).replace(hour=end_hour, minute=0, second=0, microsecond=0)
+
+        if app_end_time_bst < now_bst:
+            past_apps.append(app)
+
+    return jsonify(past_apps)
+    
+@app.route('/appointmentsWalker/<uuid:appointment_id>', methods=['PUT'])
+def update_appointment_walker(appointment_id):
+    update_data = request.get_json()
+    appointments = read_appointments_walker()
+    
+    # Find the appointment with the given ID
+    for app in appointments:
+        if app["id"] == str(appointment_id):
+            app['rating'] = update_data.get('rating', app['rating'])
+            write_appointments_walker(appointments)
+            return jsonify(app), 200
+    
+    # If no appointment is found with the given ID, return a 404 error
+    return jsonify({"error": "Appointment not found"}), 404
+
+
+@app.route('/dogs')
+def get_dogs():
+    # Load user data from JSON file
+    with open('users.json') as f:
+        users_data = json.load(f)
+    
+    # Extract dognames of dog owners
+    dogowner_dognames = [dogowner['dogname'] for dogowner in users_data['dog_owners']]
+    
+    return jsonify(dogs=dogowner_dognames)
 #Tasks
 
 def read_tasks():

@@ -1,0 +1,27 @@
+[
+    
+    {
+        "id": "82e01a0b-dce1-4b99-b49d-cfb8ff73b0ba",
+        "date": "2024-04-09T23:00:00.000Z",
+        "time": "16-17",
+        "dog": "Cooper",
+        "rating": 0,
+        "walkerUsername": "bob"
+    },
+    {
+        "id": "18a61ace-67a1-43cd-9360-52d05ad0a0ee",
+        "date": "2024-04-16T23:00:00.000Z",
+        "time": "11-12",
+        "dog": "Max",
+        "rating": 0,
+        "walkerUsername": "bob"
+    },
+    {
+        "id": "61c4a04a-eb8d-4395-9de4-808508477951",
+        "date": "2024-04-09T23:00:00.000Z",
+        "time": "9-10",
+        "dog": "Haru",
+        "rating": 0,
+        "walkerUsername": "bob"
+    }
+]
