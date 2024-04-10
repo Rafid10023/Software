@@ -445,6 +445,25 @@ def get_accepted_users():
     except json.JSONDecodeError:
         return jsonify({"error": "Error decoding JSON in accepted.json"})
 
+@app.route('/delete/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    try:
+        accepted_data = load_json_file(ACCEPTED_FILE_PATH)
+        user_found = False
+        for index, user in enumerate(accepted_data):
+            if user['id'] == user_id:
+                del accepted_data[index]
+                user_found = True
+                break
+        
+        if user_found:
+            save_json_file(ACCEPTED_FILE_PATH, accepted_data)
+            return jsonify({"message": "User deleted successfully"})
+        else:
+            return jsonify({"error": "User not found"})
+    except Exception as e:
+        return jsonify({"error": str(e)})
+        
 if __name__ == "__main__":
     app.run(debug=True)
 
