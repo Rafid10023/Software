@@ -16,10 +16,10 @@ function Reports() {
             <Header OpenSidebar={OpenSidebar}/>
             <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
             <h1>REPORTS</h1>
+            <p>No reports from customer support.</p>
             </div>
         </main>
     )
 }
     
-
 export default Reports;
