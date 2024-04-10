@@ -298,9 +298,9 @@ def update_review(review_id):
         updated_review = request.json
         for review in data:
             if review['id'] == review_id:
-                # Update review fields including the rating
+                # Update review fields
                 review['rating'] = updated_review['rating']
-                review['review'] = updated_review['review']  # Update other fields if necessary
+                review['review'] = updated_review['review']
                 save_json_file('rnr.json', data)
                 return jsonify({"message": "Review updated successfully"})
         return jsonify({"error": "Review not found"})
