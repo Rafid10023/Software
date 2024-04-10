@@ -102,7 +102,7 @@ def signup():
     dogwalkers_data.setdefault(role, []).append({'username': username, 'password': password})
 
     # Update the JSON file for dog walkers
-    with open("potential.json", 'w') as f:
+    with open("users.json", 'w') as f:
         json.dump(dogwalkers_data, f, indent=4)
 
     return jsonify({'message': 'User signed up successfully'}), 200

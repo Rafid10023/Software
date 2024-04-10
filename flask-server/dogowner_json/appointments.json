@@ -4,7 +4,7 @@
         "date": "2024-04-01T23:00:00.000Z",
         "time": "9-10",
         "walker": "bob",
-        "rating": 0,
+        "rating": 4,
         "ownerUsername": "owner2"
     },
     {
@@ -52,7 +52,7 @@
         "date": "2024-04-10T09:48:14.486Z",
         "time": "16-17",
         "walker": "emily",
-        "rating": 0,
+        "rating": 5,
         "ownerUsername": "bruh"
     },
     {
@@ -62,5 +62,13 @@
         "walker": "bob",
         "rating": 0,
         "ownerUsername": "josh"
+    },
+    {
+        "id": "1d7a8ba0-ba06-479a-932d-d75a4a6d484b",
+        "date": "2024-04-10T23:00:00.000Z",
+        "time": "13-14",
+        "walker": "john",
+        "rating": 0,
+        "ownerUsername": "Nikhel"
     }
 ]

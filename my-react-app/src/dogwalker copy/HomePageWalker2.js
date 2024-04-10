@@ -151,7 +151,9 @@ export default function Home() {
                 </div>
             </div>
             <div className='rectangle-8'>
-                <span className='contact-us'>Contact Us</span>
+            <Link to="/contact">
+                CONTACT US
+                </Link>
             </div>
         </div>
     );
